@@ -20,6 +20,34 @@
   <?= $this->include('layout/navbar'); ?>
   <?= $this->renderSection('content'); ?>
 
+  <!-- Footer -->
+  <div class="container my-3">
+    <footer>
+
+      <div class="environment">
+        <p>
+          <marquee>Lembaga Administrasi Keuangan dan Ilmu Pemerintahan</marquee>
+        </p>
+        <!-- <p>Page rendered in //{elapsed_time} seconds
+
+          <br />Environment: <//?= ENVIRONMENT ?>
+        </p> -->
+
+      </div>
+
+      <div class="copyrights">
+
+        <p>&copy; 2018 - <?= date('Y') ?> <strong> LAKIP Institute. By <a href="https://lakip.co.id">
+              Masrianto</a> .</strong>
+          All rights reserved.. </p>
+
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Version</b> 3.0.5
+        </div>
+      </div>
+
+    </footer>
+  </div>
   <!-- Optional JavaScript -->
   <!-- Popper.js first, then Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

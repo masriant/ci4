@@ -13,12 +13,12 @@ class Komik extends BaseController
   }
   public function index()
   {
-    // konneksi db menggunakan metode object oriented dgn model menggunakan __construct
-    $komik = $this->komikModel->findAll();
+    // tidak menggunakan ini karena sudah diubah method di modelnya = findAll
+    // $komik = $this->komikModel->findAll();
 
     $data = [
       'title' => 'Daftar Komik',
-      'komik' => $komik
+      'komik' => $this->komikModel->getKomik()
     ];
 
     return view('komik/index', $data);
@@ -27,8 +27,92 @@ class Komik extends BaseController
 
   public function detail($slug)
   {
-    // echo $slug;
-    $komik = $this->komikModel->where(['slug' => $slug])->first();
-    dd($komik);
+    // kalau yang ini menggunakan parameter $slug;
+    // $komik = $this->komikModel->where(['slug' => $slug])->first();
+    // dd($komik);
+
+    // kalau yang ini dipindahin ke $data
+    // $komik = $this->komikModel->getKomik($slug);
+
+    $data = [
+      'title' => 'Detail Komik',
+      'komik' => $this->komikModel->getKomik($slug)
+    ];
+    // Jika komik tidak ada di tabel
+    if (empty($data['komik'])) {
+      throw new \CodeIgniter\Exceptions\PageNotFoundException('Data yang dicari adalah " ' . $slug . ' " Hasil tidak ditemukan dalam database kami.');
+    }
+    return view('komik/detail', $data);
+  }
+
+  //--------------------------------------------------------------------
+
+  public function create()
+  {
+    // session();
+    $data = [
+      'title' => 'Form Tambah Data',
+      'validation' => \Config\Services::validation()
+    ];
+
+    return view('komik/create', $data);
+  }
+
+  //--------------------------------------------------------------------
+  public function save()
+  {
+    // Validasi Input
+    if (!$this->validate([
+      'judul' =>
+      [
+        'rules' => 'required|is_unique[komik.judul]',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'penulis' =>
+      [
+        'rules' => 'required|is_unique[komik.judul]',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'penerbit' =>
+      [
+        'rules' => 'required|is_unique[komik.judul]',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'sampul' =>
+      [
+        'rules' => 'required|is_unique[komik.judul]',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ]
+
+    ])) {
+      $validation = \Config\Services::validation();
+      // dd($validation);
+      return redirect()->to('/komik/create')->withInput()->with('validation', $validation);
+    }
+    // dd($this->request->getVar());
+    $slug = url_title($this->request->getVar('judul'), '-', true);
+    $this->komikModel->save([
+      'judul' => $this->request->getVar('judul'),
+      'slug' => $slug,
+      'penulis' => $this->request->getVar('penulis'),
+      'penerbit' => $this->request->getVar('penerbit'),
+      'sampul' => $this->request->getVar('sampul')
+    ]);
+
+    session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
+
+    return redirect()->to('/komik');
   }
 }
