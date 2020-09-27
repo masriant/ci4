@@ -56,13 +56,21 @@ class Pages extends BaseController
   {
     $data = [
       'title' => 'Contact Us',
+      'alamat' => [
+        [
+          'tipe' => 'Rumah',
+          'alamat' => 'Jl. Serdang Baru IX No. 4',
+          'kota' => 'Jakarta Pusat'
+        ],
+        [
+          'tipe' => 'Kantor',
+          'alamat' => 'Jl. Serdang Baru Raya No. 4B',
+          'kota' => 'Jakarta Pusat'
+        ]
+      ]
     ];
-    echo view('templates/header');
-    echo view('templates/head', $data);
-    echo view('templates/nav');
-    echo view('templates/sidebar');
-    echo view('pages/contact');
-    echo view('templates/footer');
+
+    return view('pages/contact', $data);
   }
 
   //--------------------------------------------------------------------

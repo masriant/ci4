@@ -44,6 +44,18 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'Contact Us',
+			'alamat' => [
+				[
+					'tipe' => 'Rumah',
+					'alamat' => 'Jl. Serdang Baru IX No. 4',
+					'kota' => 'Jakarta Pusat'
+				],
+				[
+					'tipe' => 'Kantor',
+					'alamat' => 'Jl. Serdang Baru Raya No. 4B',
+					'kota' => 'Jakarta Pusat'
+				]
+			]
 		];
 
 		return view('home/contact', $data);
