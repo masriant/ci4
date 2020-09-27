@@ -6,25 +6,47 @@ class Home extends BaseController
 {
 	public function index()
 	{
+		$data = [
+			'title' => 'Home',
+		];
+		return view('home/index', $data);
+
 		// return view('welcome_message');
-		echo 'Hello Home';
+		// echo 'Hello Pages';
+		// return view('pages/home');
+
 	}
 
 	//--------------------------------------------------------------------
+
 	public function profile()
 	{
-		return view('layout/header');
-		return view('layout/head');
-		return view('layout/nav');
-		return view('layout/sidebar');
-		return view('layout/footer');
+		$data = [
+			'title' => 'Profile',
+		];
+
+		return view('home/profile', $data);
 	}
 
 	//--------------------------------------------------------------------
+
 	public function about()
 	{
-		return view('welcome_message');
-		// echo 'Hello about';
+		$data = [
+			'title' => 'About Me',
+		];
+
+		return view('home/about', $data);
+	}
+
+	//--------------------------------------------------------------------
+	public function contact()
+	{
+		$data = [
+			'title' => 'Contact Us',
+		];
+
+		return view('home/contact', $data);
 	}
 
 	//--------------------------------------------------------------------
