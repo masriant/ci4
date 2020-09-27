@@ -6,6 +6,11 @@ use App\Models\KomikModel;
 
 class Komik extends BaseController
 {
+  protected $komikModel;
+  public function __construct()
+  {
+    $this->komikModel = new KomikModel();
+  }
   public function index()
   {
     $data = [
@@ -13,11 +18,10 @@ class Komik extends BaseController
     ];
 
 
-    // $komikModel = new \App\Models\KomikModel();
 
-    // konneksi db menggunakan model
-    $komikModel = new KomikModel();
-    $komik = $komikModel->findAll();
+    // konneksi db menggunakan metode object oriented dgn model
+
+    $komik = $this->komikModel->findAll();
     dd($komik);
 
     return view('komik/index', $data);
