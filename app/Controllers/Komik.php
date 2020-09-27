@@ -15,6 +15,7 @@ class Komik extends BaseController
 
     // $komikModel = new \App\Models\KomikModel();
 
+    // konneksi db menggunakan model
     $komikModel = new KomikModel();
     $komik = $komikModel->findAll();
     dd($komik);
