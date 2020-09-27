@@ -13,16 +13,14 @@ class Komik extends BaseController
   }
   public function index()
   {
+    // konneksi db menggunakan metode object oriented dgn model menggunakan __construct
+    $komik = $this->komikModel->findAll();
+
     $data = [
-      'title' => 'Daftar Komik'
+      'title' => 'Daftar Komik',
+      'komik' => $komik
     ];
 
-
-
-    // konneksi db menggunakan metode object oriented dgn model
-
-    $komik = $this->komikModel->findAll();
-    dd($komik);
 
     return view('komik/index', $data);
   }

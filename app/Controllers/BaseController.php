@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 /**
@@ -41,6 +42,8 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// E.g.:
 		// $this->session = \Config\Services::session();
+		$this->nama = 'Masrianto';
+		// Jika memutuskan menggunakan si semua controller, gunakan di bawah ini
+		// $this->komikModel = new \App\Models\KomikModel();
 	}
-
 }
