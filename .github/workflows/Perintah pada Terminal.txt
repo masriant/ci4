@@ -1,0 +1,22 @@
+Perintah pada Terminal
+
+1. cd + Drag Folder yang akan dibuka di Terminal
+Contoh : cd /d/www/ci4 
+
+2. membuka folder tersebut di Visual Studio Code melalui Terminal 
+Perintah : code .
+
+3. menjalankan CodeIgniter 4 pada Terminal melalui http://localhost:8080
+Perintah : php spark serve
+
+
+Perintah pada Visual Studio Code (VSC)
+
+1. pada VSC untuk mencari file 
+ketik : 
+- Ctrl + P => lanjutkan dengan nama file yang dicari
+- Shift + Alt + Bawah/Atas => Duplicate baris
+- Alt + Bawah/Atas => Memindahkan baris
+- Ctrl + Shift + S => Save As 
+- Ctrl + S => Save
+- Ctrl + D => Mencari Kata yang sama
