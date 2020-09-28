@@ -5,10 +5,6 @@
   <div class="row">
     <div class="col-8">
       <h2 class="mt-3">Form Ubah Data</h2>
-      <!-- validation -->
-      <!-- <//?= $validation->listErrors(); ?> -->
-      <!-- endvalidation -->
-      <!-- Form -->
       <form action="/komik/update/<?= $komik['id']; ?>" method="POST">
         <?= csrf_field(); ?>
         <input type="hidden" name="slug" value="<?= $komik['slug']; ?>">
