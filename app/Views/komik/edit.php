@@ -26,7 +26,7 @@
           <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
           <div class="col-sm-8">
             <input type="text" class="form-control <?= ($validation->hasError('penulis')) ? 'is-invalid' : ''; ?>"
-              id="penulis" name="penulis" value="<?= $komik['penulis']; ?>">
+              id="penulis" name="penulis" value="<?= (old('penulis')) ? old('penulis') : $komik['penulis'] ?>">
             <div class="invalid-feedback">
               <?= $validation->getError('penulis'); ?>
             </div>
@@ -36,7 +36,7 @@
           <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
           <div class="col-sm-8">
             <input type="text" class="form-control <?= ($validation->hasError('penerbit')) ? 'is-invalid' : ''; ?>"
-              id="penerbit" name="penerbit" value="<?= $komik['penerbit']; ?>">
+              id="penerbit" name="penerbit" value="<?= (old('penerbit')) ? old('penerbit') : $komik['penerbit'] ?>">
             <div class="invalid-feedback">
               <?= $validation->getError('penerbit'); ?>
             </div>
@@ -46,7 +46,7 @@
           <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
           <div class="col-sm-8">
             <input type="text" class="form-control <?= ($validation->hasError('sampul')) ? 'is-invalid' : ''; ?>"
-              id="sampul" name="sampul" value="<?= $komik['sampul']; ?>">
+              id="sampul" name="sampul" value="<?= (old('sampul')) ? old('sampul') : $komik['sampul'] ?>">
             <div class="invalid-feedback">
               <?= $validation->getError('sampul'); ?>
             </div>
