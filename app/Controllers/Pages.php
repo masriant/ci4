@@ -8,10 +8,11 @@ class Pages extends BaseController
   {
     $data = [
       'title' => 'Home',
+      'nama' => 'Masrianto'
     ];
     echo view('templates/header');
     echo view('templates/head', $data);
-    echo view('templates/nav');
+    // echo view('templates/nav');
     echo view('templates/sidebar');
     echo view('pages/home');
     echo view('templates/footer');
@@ -30,7 +31,7 @@ class Pages extends BaseController
     ];
     echo view('templates/header');
     echo view('templates/head', $data);
-    echo view('templates/nav');
+    // echo view('templates/nav');
     echo view('templates/sidebar');
     echo view('pages/profile');
     echo view('templates/footer');
@@ -45,7 +46,7 @@ class Pages extends BaseController
     ];
     echo view('templates/header');
     echo view('templates/head', $data);
-    echo view('templates/nav');
+    // echo view('templates/nav');
     echo view('templates/sidebar');
     echo view('pages/about');
     echo view('templates/footer');

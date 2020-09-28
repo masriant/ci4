@@ -4,8 +4,8 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <a href="/komik/create" class="btn btn-primary mb-3">Tambah Data</a>
-      <h1 class="mt-2">Daftar Peserta</h1>
+      <a href="/komik/create" class="btn btn-primary my-3">Tambah Data</a>
+      <h1 class="mt-1">Daftar Peserta</h1>
       <?php if (session()->getFlashdata('pesan')) : ?>
       <div class="alert alert-success" role="alert">
         <?= session()->getFlashdata('pesan'); ?>

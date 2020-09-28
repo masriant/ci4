@@ -14,18 +14,21 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('/komik'); ?>">Komik</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('/pages/about'); ?>">About</a>
-        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="</?= base_url('/pages/about'); ?>">About</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('/home'); ?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('/home/profile'); ?>">Profile</a>
+          <a class="nav-link" href="<?= base_url('/home/blog'); ?>">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('/home/contact'); ?>">Contact</a>
+          <a class="nav-link" href="<?= base_url('/home/profile'); ?>">Profile</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="</?= base_url('/home/contact'); ?>">Contact</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('/pages/contact'); ?>">Contact</a>
         </li>

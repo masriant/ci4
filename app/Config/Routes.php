@@ -34,11 +34,15 @@ $routes->setAutoRoute(true);
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Pages::index');
 
-// $routes->get('/create', 'Komik::create');
+// Controller Komik
 $routes->get('/komik/create', 'Komik::create');
 $routes->get('/komik/(:segment)', 'Komik::detail/$1');
 
-
+// Controller Home
+$routes->get('/home/blog', 'Home::blog');
+$routes->get('/home/contact', 'Home::contact');
+$routes->get('/home/profile', 'Home::profile');
+$routes->get('/home/(:segment)', 'Home::detail/$1');
 
 // Khusus Controller Admin dan Users
 $routes->get('/admin', 'Admin\Admin::index');

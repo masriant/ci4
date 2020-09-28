@@ -2,12 +2,22 @@
 
 namespace App\Controllers;
 
+use App\Models\KomikModel;
+
 class Home extends BaseController
 {
+	protected $komikModel;
+	public function __construct()
+	{
+		$this->komikModel = new KomikModel();
+	}
 	public function index()
 	{
 		$data = [
 			'title' => 'Home',
+			'komik' => $this->komikModel->getKomik(),
+			// 'komik' => $this->komikModel->getKomik($slug)
+
 		];
 		return view('home/index', $data);
 
@@ -19,10 +29,36 @@ class Home extends BaseController
 
 	//--------------------------------------------------------------------
 
+	public function blog()
+	{
+		$data = [
+			'title' => 'Blog',
+			'komik' => $this->komikModel->getKomik()
+		];
+
+		return view('home/blog', $data);
+	}
+
+	//--------------------------------------------------------------------
+	public function detail($slug)
+	{
+		$data = [
+			'title' => 'Event',
+			// 'komik' => $this->komikModel->getKomik(), // ini untuk findAll
+			'komik' => $this->komikModel->getKomik($slug) // ini untuk $slug
+
+		];
+
+		return view('home/detail', $data);
+	}
+
+	//--------------------------------------------------------------------
 	public function profile()
 	{
 		$data = [
 			'title' => 'Profile',
+			'komik' => $this->komikModel->getKomik(), // ini untuk findAll
+
 		];
 
 		return view('home/profile', $data);

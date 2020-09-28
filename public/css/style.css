@@ -1,5 +1,5 @@
 .sampul {
-  width: 100px;
+  width: 70px;
 }
 
 .sampul2 {
@@ -8,6 +8,485 @@
 
 .table>tbody>tr>* {
   vertical-align: middle;
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 120%
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 130%
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 140%
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 140%
+}
+
+h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 140%
+}
+
+h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 150%
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 2px 0 0
+}
+
+/* ========== GENERAL ========== */
+a {
+  color: #2962ff
+}
+
+a:hover {
+  color: #2962ff
+}
+
+a:focus {
+  color: #2962ff;
+  outline: none;
+  text-decoration: none
+}
+
+ol,
+ul {
+  padding-left: 15px;
+  font-size: 16px;
+  line-height: 28px
+}
+
+p {
+  font-size: 16px;
+  line-height: 28px;
+  margin-bottom: 20px
+}
+
+p.lead {
+  margin-bottom: 0
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0
+}
+
+.height100 {
+  height: 100px
+}
+
+.height90 {
+  height: 90px
+}
+
+.height80 {
+  height: 80px
+}
+
+.height70 {
+  height: 70px
+}
+
+.height60 {
+  height: 60px
+}
+
+.height50 {
+  height: 50px
+}
+
+.height40 {
+  height: 40px
+}
+
+.height30 {
+  height: 30px
+}
+
+.height20 {
+  height: 20px
+}
+
+.height10 {
+  height: 10px
+}
+
+.height5 {
+  height: 5px
+}
+
+.pager {
+  margin-bottom: 0
+}
+
+.bg333 {
+  background: #333;
+  color: #fff
+}
+
+.bg2962ff {
+  background: #2962ff;
+  color: #fff
+}
+
+.bgF9F9F9 {
+  background: #F9F9F9
+}
+
+.bgf6f6f6 {
+  background: #f6f6f6
+}
+
+.bgfff {
+  background: #fff
+}
+
+.bg000 {
+  background: #000;
+  color: #fff
+}
+
+.bgeaeaea {
+  background: #eaeaea
+}
+
+.bgrgba09 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.color00c853 {
+  color: #00c853
+}
+
+.colorf00 {
+  color: #f00
+}
+
+.colorfff {
+  color: #fff
+}
+
+.fontsize90 {
+  font-size: 90px
+}
+
+.fontsize50 {
+  font-size: 50px
+}
+
+.fontsize36 {
+  font-size: 36px
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bgblue {
+  background-color: #2962ff
+}
+
+.bgred {
+  background-color: #ff5252
+}
+
+.bgpink {
+  background-color: #ff4081
+}
+
+.bgpurple {
+  background-color: #e040fb
+}
+
+.bgdeeppurple {
+  background-color: #7c4dff
+}
+
+.bgindigo {
+  background-color: #536dfe
+}
+
+.bggreen {
+  background-color: #00c853
+}
+
+.bgorange {
+  background-color: #ff9100
+}
+
+.bggrey {
+  background-color: #9e9e9e
+}
+
+.bgnoise {}
+
+.padding20 {
+  padding: 20px
+}
+
+.padding30 {
+  padding: 30px
+}
+
+.add-padding {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.marginbottom0 {
+  margin-bottom: 0
+}
+
+.layer-color {
+  background-color: rgba(13, 71, 161, 0.7)
+}
+
+.modal-dialog h2 {
+  font-size: 36px
+}
+
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0
+}
+
+.text-success {
+  color: #00c853
+}
+
+.text-danger {
+  color: #ff5252
+}
+
+.borderbottom0 {
+  border-bottom: 0
+}
+
+/* ========== BLOG ========== */
+.blog .blog-featured-post {
+  background: #ccc;
+  height: 600px
+}
+
+.blog .blog-featured-post .col-md-5 {
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0
+}
+
+.blog .blog-featured-post .col-md-5 a {
+  height: 600px;
+  display: block;
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+50,000000+100&0+50,1+100 */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#000000', GradientType=0);
+  /* IE6-9 */
+}
+
+.blog .blog-featured-post .col-md-5 h2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 50px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+  padding-right: 20px
+}
+
+.blog .blog-featured-post .col-md-4 {
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0
+}
+
+.blog .blog-featured-post .col-md-4 .col2a {
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  position: relative
+}
+
+.blog .blog-featured-post .col-md-4 .col2b {
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  position: relative
+}
+
+.blog .blog-featured-post .col-md-4 a {
+  height: 300px;
+  display: block;
+  color: #fff;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+50,000000+100&0+50,1+100 */
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#000000', GradientType=0);
+  /* IE6-9 */
+}
+
+.blog .blog-featured-post .col-md-4 h2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 28px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
+  padding-right: 20px
+}
+
+.blog .blog-featured-post .col-md-3 {
+  height: 100%;
+  padding-left: 0;
+  padding-right: 0
+}
+
+.blog .blog-featured-post .col-md-3 img {
+  width: 100%;
+  height: 600px
+}
+
+.blog .blog-featured-post .col-md-3 a {
+  display: block;
+}
+
+.blog .thumbnail {
+  margin-bottom: 30px;
+  padding: 0;
+  border-radius: 0
+}
+
+.blog .thumbnail .thumbnail-cover {
+  display: block;
+  background-size: cover;
+  background-position: center center
+}
+
+.blog .thumbnail .thumbnail-title {
+  padding: 15px;
+  height: 220px;
+  overflow: hidden
+}
+
+.blog .thumbnail>span.tags {
+  padding: 0 15px 10px;
+  display: block
+}
+
+.blog .thumbnail .block-meta {
+  background-color: #f6f6f6;
+  padding: 4px 0 0 10px;
+  height: 40px
+}
+
+.blog .thumbnail .block-meta img {
+  display: inline;
+  margin-right: 5px;
+  width: 32px;
+  height: 32px
+}
+
+.blog-detail {
+  border-top: 1px solid #f6f6f6
+}
+
+.blog-detail .blog-detail-cover {
+  display: block;
+  background-size: cover;
+  background-position: center center
+}
+
+.blog-detail .embed-responsive {
+  margin-bottom: 20px
+}
+
+.blog-detail .blog-detail-content img {
+  margin: 20px auto 20px;
+}
+
+.blog-detail .blog-detail-content h2 {
+  margin-bottom: 20px
+}
+
+.blog-detail .blog-detail-content h3 {
+  margin-bottom: 20px;
+  font-size: 30px
+}
+
+.offer1 {
+  padding-top: 40px;
+  padding-bottom: 50px
+}
+
+.offer1 h3 {
+  font-size: 36px
+}
+
+.offer3 {
+  padding-top: 60px;
+  padding-bottom: 60px
+}
+
+.offer3 h3 {
+  font-size: 36px
+}
+
+.offer3 p a {
+  color: #333
+}
+
+.blog-detail .blog-related .col-md-4 .blog-related-thumbnail {
+  display: block;
+  background-size: cover;
+  background-position: center center
+}
+
+.blog-detail .blog-related .col-md-4 h3 {
+  margin-bottom: 20px
+}
+
+.blog-search-result .blog-search-result-thumbnail {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat
+}
+
+.blog-search-result article {
+  margin-bottom: 20px
 }
 
 /* CSS */

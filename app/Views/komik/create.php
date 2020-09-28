@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-      <h2 class="my-3">Form Tambah Data</h2>
+      <h2 class="mt-3">Form Tambah Data</h2>
       <!-- validation -->
       <!-- <//?= $validation->listErrors(); ?> -->
       <!-- endvalidation -->

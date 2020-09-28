@@ -12,3 +12,4 @@
 </head>
 
 <body>
+  <?= $this->include('layout/navbar'); ?>

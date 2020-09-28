@@ -4,7 +4,8 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>Contact Us</h1>
+      <h3 class="mt-3">Contact Us</h3>
+      <hr>
       <?php foreach ($alamat as $a) : ?>
       <ul>
         <li><?= $a['tipe']; ?></li>
