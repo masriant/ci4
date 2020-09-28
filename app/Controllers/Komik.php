@@ -40,7 +40,7 @@ class Komik extends BaseController
     ];
     // Jika komik tidak ada di tabel
     if (empty($data['komik'])) {
-      throw new \CodeIgniter\Exceptions\PageNotFoundException('Data yang dicari adalah " ' . $slug . ' " Hasil tidak ditemukan dalam database kami.');
+      throw new \CodeIgniter\Exceptions\PageNotFoundException('Data yang dicari adalah " ' . $slug . ' " tidak ditemukan dalam database kami.');
     }
     return view('komik/detail', $data);
   }
@@ -113,6 +113,14 @@ class Komik extends BaseController
 
     session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
 
+    return redirect()->to('/komik');
+  }
+
+  //--------------------------------------------------------------------
+  public function delete($id)
+  {
+    $this->komikModel->delete($id);
+    session()->setFlashdata('pesan', 'Data berhasil dihapus.');
     return redirect()->to('/komik');
   }
 }

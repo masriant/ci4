@@ -22,8 +22,13 @@
               <!-- row mb-3 -->
               <div class="row mb-3">
                 <div class="col-md-10">
-                  <a href="" class="btn btn-warning">Edit</a>
-                  <a href="" class="btn btn-danger">Delete</a>
+                  <a href="/komik/edit/<?= $komik['slug']; ?>" class="btn btn-warning">Edit</a>
+                  <?= csrf_field(); ?>
+                  <form action="/komik/<?= $komik['id']; ?>" method="POST" class="d-inline">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-danger"
+                      onclick="return confirm('Apakah anda yakin?');">Delete</button>
+                  </form>
                   <a href="/komik" class="btn btn-info">Back to Daftar</a>
                 </div>
               </div>
