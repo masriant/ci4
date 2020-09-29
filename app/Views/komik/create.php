@@ -46,7 +46,7 @@
             <!-- v5 -->
             <div class="form-file form-file-sm">
               <input type="file" class="form-file-input <?= ($validation->hasError('sampul')) ? 'is-invalid' : ''; ?>"
-                id="sampul" name="sampul">
+                id="sampul" name="sampul" onchange="previewImg()">
               <div class="invalid-feedback">
                 <?= $validation->getError('sampul'); ?>
               </div>
