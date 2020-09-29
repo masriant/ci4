@@ -22,14 +22,14 @@
               <!-- row mb-3 -->
               <div class="row mb-3">
                 <div class="col-md-10">
-                  <a href="/blog/edit/<?= $blog['slug']; ?>" class="btn btn-warning">Edit</a>
+                  <a href="/blog/edit/<?= $blog['slug']; ?>" class="btn btn-outline-warning btn-sm">Edit</a>
                   <?= csrf_field(); ?>
                   <form action="/blog/<?= $blog['id']; ?>" method="POST" class="d-inline">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-danger"
+                    <button type="submit" class="btn btn-outline-danger btn-sm"
                       onclick="return confirm('Apakah anda yakin?');">Delete</button>
                   </form>
-                  <a href="/blog" class="btn btn-info">Back to Daftar</a>
+                  <a href="/blog" class="btn btn-outline-success btn-sm">Back to Daftar</a>
                 </div>
               </div>
               <!-- row mb-3 -->

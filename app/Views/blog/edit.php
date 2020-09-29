@@ -63,7 +63,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-sm-8">
-            <button type="submit" class="btn btn-primary">Ubah Data</button>
+            <button type="submit" class="btn btn-outline-primary btn-sm">Ubah Data</button>
           </div>
         </div>
         <!--  -->

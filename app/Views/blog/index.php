@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <a href="/blog/create" class="btn btn-primary my-3">Tambah Data</a>
+      <a href="/blog/create" class="btn btn-outline-primary btn-sm my-3">Tambah Data</a>
       <h1 class="mt-1">Daftar Peserta</h1>
       <?php if (session()->getFlashdata('pesan')) : ?>
       <div class="alert alert-success" role="alert">
@@ -28,7 +28,7 @@
             <td><img src="/img/<?= $b['sampul']; ?>" alt="" class="sampul"> </td>
             <td><?= $b['blog_title']; ?></td>
             <td>
-              <a href="/blog/<?= $b['slug']; ?>" class="btn btn-success">Detail</a>
+              <a href="/blog/<?= $b['slug']; ?>" class="btn btn-outline-info btn-sm">Detail</a>
             </td>
           </tr>
           <?php endforeach; ?>
