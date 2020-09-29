@@ -39,3 +39,4 @@ App>Database>Migrations
 -f - to force a bypass confirmation question, it is only asked in a production environment
 
 Seeds
+1. php spark db:seed OrangSeeder
