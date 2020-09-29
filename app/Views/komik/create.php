@@ -45,7 +45,11 @@
 
             <!-- v5 -->
             <div class="form-file form-file-sm">
-              <input type="file" class="form-file-input" id="sampul">
+              <input type="file" class="form-file-input <?= ($validation->hasError('sampul')) ? 'is-invalid' : ''; ?>"
+                id="sampul" name="sampul">
+              <div class="invalid-feedback">
+                <?= $validation->getError('sampul'); ?>
+              </div>
               <label class="form-file-label" for="Sampul">
                 <span class="form-file-text">Pilih gambar...</span>
                 <span class="form-file-button">Browse</span>
@@ -60,9 +64,7 @@
             </div> -->
             <!-- v4 -->
 
-            <div class="invalid-feedback">
-              <?= $validation->getError('sampul'); ?>
-            </div>
+
           </div>
         </div>
         <div class="row mb-3">

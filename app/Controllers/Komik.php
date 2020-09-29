@@ -79,20 +79,38 @@ class Komik extends BaseController
           'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
+      // 'sampul' =>
+      // [
+      //   'rules' => 'required|is_unique[komik.judul]',
+      //   'errors' => [
+      //     'required' => '{field} harus diisi.',
+      //     'is_unique' => '{field} sudah terdaftar.'
+      //   ]
+      // ]
       'sampul' =>
       [
-        'rules' => 'required|is_unique[komik.judul]',
+        'rules' => 'uploaded[sampul]|max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
         'errors' => [
-          'required' => '{field} harus diisi.',
-          'is_unique' => '{field} sudah terdaftar.'
+          'uploaded' => 'pilih gambar {field} terlebih dahulu.',
+          'max_size' => 'ukuran gambar {field} terlalu besar.',
+          'is_image' => 'photo {field} yang anda pilih bukan gambar.',
+          'mime_in' => 'photo {field} disarankan hanya jpg,jpeg,png.',
         ]
       ]
 
     ])) {
-      $validation = \Config\Services::validation();
+      // $validation = \Config\Services::validation();
+      // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);
 
-      return redirect()->to('/komik/create')->withInput()->with('validation', $validation);
+      return redirect()->to('/komik/create')->withInput();
     }
+
+    // ambil gambar
+    $fileSampul = $this->request->getFile('sampul');
+    // pindahkan file ke folder img
+    $fileSampul->move('img');
+    // ambil nama file sampul
+    $namaSampul = $fileSampul->getName();
 
     $slug = url_title($this->request->getVar('judul'), '-', true);
     $this->komikModel->save([
@@ -100,7 +118,7 @@ class Komik extends BaseController
       'slug' => $slug,
       'penulis' => $this->request->getVar('penulis'),
       'penerbit' => $this->request->getVar('penerbit'),
-      'sampul' => $this->request->getVar('sampul')
+      'sampul' => $namaSampul
     ]);
 
     session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
