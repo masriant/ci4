@@ -20,3 +20,22 @@ ketik :
 - Ctrl + Shift + S => Save As 
 - Ctrl + S => Save
 - Ctrl + D => Mencari Kata yang sama
+
+App>Database>Migrations
+1. php spark migrate:create Orang => membuat tabel "Orang" di Database
+2. php spark migrate
+-g - to chose database group, otherwise default database group will be used.
+-n - to choose namespace, otherwise (App) namespace will be used.
+-all - to migrate all namespaces to the latest migration
+3. php spark migrate -g test -n Blog
+4. php spark migrate:rollback
+-g - to choose database group, otherwise default database group will be used.
+-b - to choose a batch: natural numbers specify the batch, negatives indicate a relative batch
+-f - to force a bypass confirmation question, it is only asked in a production environment
+5. php spark migrate:refresh
+-g - to choose database group, otherwise default database group will be used.
+-n - to choose namespace, otherwise (App) namespace will be used.
+-all - to refresh all namespaces
+-f - to force a bypass confirmation question, it is only asked in a production environment
+
+Seeds
