@@ -21,7 +21,10 @@
           <a class="nav-link" href="<?= base_url('/home'); ?>">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= base_url('/home/blog'); ?>">Blog</a>
+          <a class="nav-link" href="<?= base_url('/blog'); ?>">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?= base_url('/orang'); ?>">Orang</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?= base_url('/home/profile'); ?>">Profile</a>

@@ -27,6 +27,10 @@ class Blog extends Migration
 				'type'           => 'TEXT',
 				'null'           => true,
 			],
+			'sampul' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '255',
+			],
 			'created_at' => [
 				'type'           => 'DATETIME',
 				'null'           => true,

@@ -40,6 +40,18 @@ $routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');
 $routes->delete('/komik/(:num)', 'Komik::delete/$1');
 $routes->get('/komik/(:any)', 'Komik::detail/$1');
 
+// Controller Orang
+$routes->get('/orang/create', 'Orang::create');
+$routes->get('/orang/edit/(:segment)', 'Orang::edit/$1');
+$routes->delete('/orang/(:num)', 'Orang::delete/$1');
+$routes->get('/orang/(:any)', 'Orang::detail/$1');
+
+// Controller Blog
+$routes->get('/blog/create', 'Blog::create');
+$routes->get('/blog/edit/(:segment)', 'Blog::edit/$1');
+$routes->delete('/blog/(:num)', 'Blog::delete/$1');
+$routes->get('/blog/(:any)', 'Blog::detail/$1');
+
 // Controller Home
 $routes->get('/home/blog', 'Home::blog');
 $routes->get('/home/contact', 'Home::contact');
