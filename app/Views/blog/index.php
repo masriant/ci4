@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <a href="/komik/create" class="btn btn-primary my-3">Tambah Data</a>
+      <a href="/blog/create" class="btn btn-primary my-3">Tambah Data</a>
       <h1 class="mt-1">Daftar Peserta</h1>
       <?php if (session()->getFlashdata('pesan')) : ?>
       <div class="alert alert-success" role="alert">
@@ -22,13 +22,13 @@
         </thead>
         <tbody>
           <?php $i = 1; ?>
-          <?php foreach ($komik as $k) : ?>
+          <?php foreach ($blog as $b) : ?>
           <tr>
             <th scope="row"><?= $i++; ?></th>
-            <td><img src="/img/<?= $k['sampul']; ?>" alt="" class="sampul"> </td>
-            <td><?= $k['judul']; ?></td>
+            <td><img src="/img/<?= $b['sampul']; ?>" alt="" class="sampul"> </td>
+            <td><?= $b['blog_title']; ?></td>
             <td>
-              <a href="/komik/<?= $k['slug']; ?>" class="btn btn-success">Detail</a>
+              <a href="/blog/<?= $b['slug']; ?>" class="btn btn-success">Detail</a>
             </td>
           </tr>
           <?php endforeach; ?>

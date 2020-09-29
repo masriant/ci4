@@ -14,7 +14,7 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title"><?= $orang['nama']; ?></h5>
-              <!-- <p class="card-text"><b>Penulis :</b> <//?= $orang['penulis']; ?></p> -->
+              <p class="card-text"><b>Alamat :</b> <?= $orang['alamat']; ?></p>
               <!-- <p class="card-text"><small class="text-muted"><b>Penerbit : </b> <//?= $orang['penerbit']; ?></small></p> -->
               <p class="card-text"><small class="text-muted"><b>Dibuat : </b> <?= $orang['created_at']; ?></small></p>
               <p class="card-text"><small class="text-muted"><b>Terakhir diubah : </b>

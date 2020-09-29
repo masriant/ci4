@@ -5,44 +5,47 @@
   <div class="row">
     <div class="col-8">
       <h2 class="mt-3">Form Ubah Data</h2>
-      <form action="/komik/update/<?= $komik['id']; ?>" method="POST" enctype="multipart/form-data">
+      <form action="/blog/update/<?= $blog['id']; ?>" method="POST" enctype="multipart/form-data">
         <?= csrf_field(); ?>
-        <input type="hidden" name="slug" value="<?= $komik['slug']; ?>">
-        <input type="hidden" name="sampulLama" value="<?= $komik['sampul']; ?>">
+        <input type="hidden" name="slug" value="<?= $blog['slug']; ?>">
+        <input type="hidden" name="sampulLama" value="<?= $blog['sampul']; ?>">
         <div class="row mb-3">
-          <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+          <label for="blog_title" class="col-sm-2 col-form-label">Judul</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>"
-              id="judul" name="judul" autofocus value="<?= (old('judul')) ? old('judul') : $komik['judul'] ?>">
+            <input type="text" class="form-control <?= ($validation->hasError('blog_title')) ? 'is-invalid' : ''; ?>"
+              id="blog_title" name="blog_title" autofocus
+              value="<?= (old('blog_title')) ? old('blog_title') : $blog['blog_title'] ?>">
             <div class="invalid-feedback">
-              <?= $validation->getError('judul'); ?>
+              <?= $validation->getError('blog_title'); ?>
             </div>
           </div>
         </div>
         <div class="row mb-3">
-          <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
+          <label for="blog_description" class="col-sm-2 col-form-label">Artikel</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control <?= ($validation->hasError('penulis')) ? 'is-invalid' : ''; ?>"
-              id="penulis" name="penulis" value="<?= (old('penulis')) ? old('penulis') : $komik['penulis'] ?>">
+            <input type="text"
+              class="form-control <?= ($validation->hasError('blog_description')) ? 'is-invalid' : ''; ?>"
+              id="blog_description" name="blog_description"
+              value="<?= (old('blog_description')) ? old('blog_description') : $blog['blog_description'] ?>">
             <div class="invalid-feedback">
-              <?= $validation->getError('penulis'); ?>
+              <?= $validation->getError('blog_description'); ?>
             </div>
           </div>
         </div>
-        <div class="row mb-3">
+        <!-- <div class="row mb-3">
           <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control <?= ($validation->hasError('penerbit')) ? 'is-invalid' : ''; ?>"
-              id="penerbit" name="penerbit" value="<?= (old('penerbit')) ? old('penerbit') : $komik['penerbit'] ?>">
+            <input type="text" class="form-control <//?= ($validation->hasError('penerbit')) ? 'is-invalid' : ''; ?>"
+              id="penerbit" name="penerbit" value="<//?= (old('penerbit')) ? old('penerbit') : $blog['penerbit'] ?>">
             <div class="invalid-feedback">
-              <?= $validation->getError('penerbit'); ?>
+              <//?= $validation->getError('penerbit'); ?>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="row mb-3">
           <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
           <div class="col-sm-2">
-            <img src="/img/<?= $komik['sampul']; ?>" class="img-thumbnail img-preview">
+            <img src="/img/<?= $blog['sampul']; ?>" class="img-thumbnail img-preview">
           </div>
           <div class="col-sm-6">
             <div class="form-file form-file-sm">
@@ -52,7 +55,7 @@
                 <?= $validation->getError('sampul'); ?>
               </div>
               <label class="form-file-label" for="Sampul">
-                <span class="form-file-text"><?= $komik['sampul']; ?></span>
+                <span class="form-file-text"><?= $blog['sampul']; ?></span>
                 <span class="form-file-button">Browse</span>
               </label>
             </div>

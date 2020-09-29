@@ -44,7 +44,7 @@ class Blog extends BaseController
   {
 
     $data = [
-      'title' => 'Form Tambah Post',
+      'title' => 'Tambah Artikel',
       'validation' => \Config\Services::validation()
     ];
 
@@ -60,29 +60,20 @@ class Blog extends BaseController
       [
         'rules' => 'required|is_unique[blog.blog_title]',
         'errors' => [
-          'required' => '{field} harus diisi.',
+          'required' => 'judul harus diisi.',
           'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
       'blog_description' =>
       [
-        'rules' => 'required|is_unique[blog.blog_description]',
+        'rules' => 'required',
         'errors' => [
           'required' => '{field} harus diisi.',
-          'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
-      // 'penerbit' =>
-      // [
-      //   'rules' => 'required|is_unique[blog.penerbit]',
-      //   'errors' => [
-      //     'required' => '{field} harus diisi.',
-      //     'is_unique' => '{field} sudah terdaftar.'
-      //   ]
-      // ],
       'sampul' =>
       [
-        'rules' => 'max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
+        'rules' => 'max_size[sampul,5024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
         'errors' => [
           'max_size' => 'ukuran gambar {field} terlalu besar.',
           'is_image' => 'photo {field} yang anda pilih bukan gambar.',
@@ -107,13 +98,11 @@ class Blog extends BaseController
       $fileSampul->move('img', $namaSampul);
     }
 
-
     $slug = url_title($this->request->getVar('blog_title'), '-', true);
     $this->blogModel->save([
       'blog_title' => $this->request->getVar('blog_title'),
       'slug' => $slug,
       'blog_description' => $this->request->getVar('blog_description'),
-      // 'penerbit' => $this->request->getVar('penerbit'),
       'sampul' => $namaSampul
     ]);
 
@@ -167,7 +156,7 @@ class Blog extends BaseController
       [
         'rules' => $rule_blog_title,
         'errors' => [
-          'required' => '{field} harus diisi.',
+          'required' => 'judul harus diisi.',
           'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
@@ -178,16 +167,9 @@ class Blog extends BaseController
           'required' => '{field} harus diisi.'
         ]
       ],
-      // 'penerbit' =>
-      // [
-      //   'rules' => 'required',
-      //   'errors' => [
-      //     'required' => '{field} harus diisi.'
-      //   ]
-      // ],
       'sampul' =>
       [
-        'rules' => 'max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
+        'rules' => 'max_size[sampul,5024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
         'errors' => [
           'max_size' => 'ukuran gambar {field} terlalu besar.',
           'is_image' => 'photo {field} yang anda pilih bukan gambar.',
@@ -220,7 +202,6 @@ class Blog extends BaseController
       'blog_title' => $this->request->getVar('blog_title'),
       'slug' => $slug,
       'blog_description' => $this->request->getVar('blog_description'),
-      // 'penerbit' => $this->request->getVar('penerbit'),
       'sampul' => $namaSampul
     ]);
 
