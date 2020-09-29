@@ -8,36 +8,23 @@ class OrangSeeder extends \CodeIgniter\Database\Seeder
 {
   public function run()
   {
-    // faker
-    // $faker = \Faker\Factory::create('id_ID');
-    // for ($i = 0; $i < 100; $i++) {
-    //   $data = [
-    //     'nama'        => $faker->name,
-    //     'alamat'      => $faker->address,
-    //     'created_at'  => Time::createFromTimestamp($faker->unixTime()),
-    //     'updated_at'  => Time::now(),
-    //   ];
-    //   $this->db->table('orang')->insert($data);
-    // }
-
-
-
-    // Test 2 OrangSeeder Simple Queries => php spark db:seed OrangSeeder
     $data = [
       'nama'        => 'Masrianto',
       'alamat'      => 'Jakarta',
       'created_at'  => Time::now(),
       'updated_at'  => Time::now()
     ];
+
+    // Test 2 OrangSeeder Simple Queries => php spark db:seed OrangSeeder
     // Simple Queries
-    $this->db->query(
-      "INSERT INTO orang (nama, alamat, created_at, updated_at) VALUES(:nama:, :alamat:, :created_at:, :updated_at:)",
-      $data
-    );
+    // $this->db->query(
+    //   "INSERT INTO orang (nama, alamat, created_at, updated_at) VALUES(:nama:, :alamat:, :created_at:, :updated_at:)",
+    //   $data
+    // );
 
 
-
+    // Test 3 OrangSeeder Query Builder => php spark db:seed OrangSeeder
     // Using Query Builder
-    // $this->db->table('users')->insert($data);
+    $this->db->table('orang')->insert($data);
   }
 }

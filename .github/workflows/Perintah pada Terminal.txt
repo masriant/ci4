@@ -22,6 +22,7 @@ ketik :
 - Ctrl + D => Mencari Kata yang sama
 
 App>Database>Migrations
+https://codeigniter.com/user_guide/dbmgmt/migration.html
 1. php spark migrate:create Orang => membuat tabel "Orang" di Database
 2. php spark migrate
 -g - to chose database group, otherwise default database group will be used.
@@ -38,5 +39,13 @@ App>Database>Migrations
 -all - to refresh all namespaces
 -f - to force a bypass confirmation question, it is only asked in a production environment
 
-Seeds
-1. php spark db:seed OrangSeeder
+Seeds 
+https://codeigniter.com/user_guide/dbmgmt/seeds.html
+1. php spark db:seed OrangSeeder (nama DB yang akan di eksekusi)
+
+Database (DBMS - phpMyAdmin)
+1.a. membersihkan tabel Database (menghapus isi tabel) == Reset id ke awal=(AI = 1)
+- klik operasi/operations > kosongkan tabel(TRUNCATE)
+
+1.b. Hapus tabel Database
+- klik operasi/operations > Hapus tabel(DROP)
