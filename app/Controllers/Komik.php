@@ -97,14 +97,14 @@ class Komik extends BaseController
 
     // ambil gambar
     $fileSampul = $this->request->getFile('sampul');
-
-
+    // generate nama sampul random
+    $namaSampul = $fileSampul->getRandomName();
 
     // pindahkan file ke folder img
-    $fileSampul->move('img');
+    $fileSampul->move('img', $namaSampul);
 
     // ambil nama file sampul sesuai nama file
-    $namaSampul = $fileSampul->getName();
+    // $namaSampul = $fileSampul->getName();
 
     $slug = url_title($this->request->getVar('judul'), '-', true);
     $this->komikModel->save([
