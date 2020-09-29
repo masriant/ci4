@@ -20,8 +20,8 @@
         <div class="row mb-3">
           <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
           <div class="col-sm-8">
-            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
-              id="alamat" name="alamat" value="<?= old('alamat'); ?>" rows="3"></textarea>
+            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>" id="alamat"
+              name="alamat" value="<?= old('alamat'); ?>" rows="3"></textarea>
             <div class="invalid-feedback">
               <?= $validation->getError('alamat'); ?>
             </div>
@@ -51,7 +51,7 @@
         </div>
         <div class="row mb-3">
           <div class="col-sm-8">
-            <button type="submit" class="btn btn-primary">Tambah Data</button>
+            <button type="submit" class="btn btn-outline-primary btn-sm">Tambah Data</button>
           </div>
         </div>
 

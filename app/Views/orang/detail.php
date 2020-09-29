@@ -22,14 +22,14 @@
               <!-- row mb-3 -->
               <div class="row mb-3">
                 <div class="col-md-10">
-                  <a href="/orang/edit/<?= $orang['slug']; ?>" class="btn btn-warning">Edit</a>
+                  <a href="/orang/edit/<?= $orang['slug']; ?>" class="btn btn-outline-warning btn-sm">Edit</a>
                   <?= csrf_field(); ?>
                   <form action="/orang/<?= $orang['id']; ?>" method="POST" class="d-inline">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-danger"
+                    <button type="submit" class="btn btn-outline-danger btn-sm"
                       onclick="return confirm('Apakah anda yakin?');">Delete</button>
                   </form>
-                  <a href="/orang" class="btn btn-info">Back to Daftar</a>
+                  <a href="/orang" class="btn btn-outline-info btn-sm">Back to Daftar</a>
                 </div>
               </div>
               <!-- row mb-3 -->

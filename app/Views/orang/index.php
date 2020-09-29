@@ -28,7 +28,7 @@
             <td><img src="/img/<?= $g['sampul']; ?>" alt="" class="sampul"> </td>
             <td><?= $g['nama']; ?></td>
             <td>
-              <a href="/orang/<?= $g['slug']; ?>" class="btn btn-success">Detail</a>
+              <a href="/orang/<?= $g['slug']; ?>" class="btn btn-outline-success btn-sm">Detail</a>
             </td>
           </tr>
           <?php endforeach; ?>
