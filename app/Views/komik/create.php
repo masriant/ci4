@@ -40,9 +40,6 @@
         <div class="row mb-3">
           <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
           <div class="col-sm-8">
-            <!-- <input type="text" class="form-control <//?= ($validation->hasError('sampul')) ? 'is-invalid' : ''; ?>"
-              id="sampul" name="sampul" value="<//?= old('sampul'); ?>"> -->
-
             <!-- v5 -->
             <div class="form-file form-file-sm">
               <input type="file" class="form-file-input <?= ($validation->hasError('sampul')) ? 'is-invalid' : ''; ?>"
@@ -56,14 +53,6 @@
               </label>
             </div>
             <!-- v5 -->
-
-            <!-- v4 -->
-            <!-- <div class="custom-file">
-              <input type="file" class="custom-file-input" id="customFile">
-              <label class="custom-file-label" for="customFile">Choose File</label>
-            </div> -->
-            <!-- v4 -->
-
 
           </div>
         </div>

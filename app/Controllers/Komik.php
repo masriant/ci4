@@ -79,14 +79,6 @@ class Komik extends BaseController
           'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
-      // 'sampul' =>
-      // [
-      //   'rules' => 'required|is_unique[komik.judul]',
-      //   'errors' => [
-      //     'required' => '{field} harus diisi.',
-      //     'is_unique' => '{field} sudah terdaftar.'
-      //   ]
-      // ]
       'sampul' =>
       [
         'rules' => 'uploaded[sampul]|max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
@@ -99,17 +91,19 @@ class Komik extends BaseController
       ]
 
     ])) {
-      // $validation = \Config\Services::validation();
-      // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);
 
       return redirect()->to('/komik/create')->withInput();
     }
 
     // ambil gambar
     $fileSampul = $this->request->getFile('sampul');
+
+
+
     // pindahkan file ke folder img
     $fileSampul->move('img');
-    // ambil nama file sampul
+
+    // ambil nama file sampul sesuai nama file
     $namaSampul = $fileSampul->getName();
 
     $slug = url_title($this->request->getVar('judul'), '-', true);
