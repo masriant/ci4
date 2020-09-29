@@ -20,8 +20,8 @@
         <div class="row mb-3">
           <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
-              id="alamat" name="alamat" value="<?= old('alamat'); ?>">
+            <textarea class="form-control <?= ($validation->hasError('alamat')) ? 'is-invalid' : ''; ?>"
+              id="alamat" name="alamat" value="<?= old('alamat'); ?>" rows="3"></textarea>
             <div class="invalid-feedback">
               <?= $validation->getError('alamat'); ?>
             </div>
