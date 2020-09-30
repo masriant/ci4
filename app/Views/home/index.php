@@ -19,8 +19,7 @@
                   style="background-image:url('/img/transparent300x150.png')"><img class="img-responsive btn-block"
                     src="/img/<?= $m['sampul']; ?>"></a>
                 <div class="height10 hidden-xs"></div>
-                <h3><a href="/home/<?= $m['slug']; ?>"><?= $m['judul']; ?></a>
-                </h3>
+                <p><a href="/home/<?= $m['slug']; ?>"><?= $m['judul']; ?></a></p>
               </div>
               <?php endforeach; ?>
             </div>
@@ -29,6 +28,7 @@
           <div class="hidden-xs hidden-sm col-md-2"></div>
         </div>
       </div>
+      <?= $pager->links('masrianto', 'masrianto_pagination'); ?>
       <!-- EndArtikel -->
     </div>
   </div>

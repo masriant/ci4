@@ -13,10 +13,22 @@ class Home extends BaseController
 	}
 	public function index()
 	{
+		$currentPage = $this->request->getVar('page_masrianto') ? $this->request->getVar('page_masrianto') : 1;
+
+		$keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$komik = $this->komikModel->search($keyword);
+		} else {
+			$komik = $this->komikModel;
+		}
+
 		$data = [
-			'title' => 'Home',
-			'komik' => $this->komikModel->getKomik(),
+			'title' => 'Artikel',
+			// 'komik' => $this->komikModel->getKomik(),
 			// 'komik' => $this->komikModel->getKomik($slug)
+			'komik'       => $komik->paginate(3, 'masrianto'),
+			'pager'       => $this->komikModel->pager,
+			'currentPage' => $currentPage
 
 		];
 		return view('home/index', $data);
