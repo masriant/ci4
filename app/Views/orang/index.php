@@ -3,9 +3,21 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-6">
+      <a href="/orang/create" class="btn btn-outline-primary btn-sm my-3">Tambah Data</a>
+      <h1 class="mt-2">Daftar Peserta</h1>
+      <form action="" method="POST">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Masukkan keyword pencarian.." name="keyword">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
     <div class="col">
-      <a href="/orang/create" class="btn btn-primary my-3">Tambah Data</a>
-      <h1 class="mt-1">Daftar Peserta</h1>
       <?php if (session()->getFlashdata('pesan')) : ?>
       <div class="alert alert-success" role="alert">
         <?= session()->getFlashdata('pesan'); ?>
@@ -15,8 +27,8 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Sampul</th>
             <th scope="col">Nama</th>
+            <th scope="col">Alamat</th>
             <th scope="col">Aksi</th>
           </tr>
         </thead>

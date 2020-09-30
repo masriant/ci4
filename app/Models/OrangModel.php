@@ -19,4 +19,15 @@ class OrangModel extends Model
 
     return $this->where(['slug' => $slug])->first();
   }
+
+  public function search($keyword)
+  {
+    // $builder = $this->table('orang');
+    // $builder->like('nama', $keyword);
+    // return $builder;
+
+    // return $this->table('orang')->like('nama', $keyword);
+
+    return $this->table('orang')->like('nama', $keyword)->orLike('alamat', $keyword);
+  }
 }
