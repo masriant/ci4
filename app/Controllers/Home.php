@@ -43,9 +43,21 @@ class Home extends BaseController
 
 	public function blog()
 	{
+		$currentPage = $this->request->getVar('page_masrianto') ? $this->request->getVar('page_masrianto') : 1;
+
+		$keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$komik = $this->komikModel->search($keyword);
+		} else {
+			$komik = $this->komikModel;
+		}
+
 		$data = [
 			'title' => 'Blog',
-			'komik' => $this->komikModel->getKomik()
+			// 'komik' => $this->komikModel->getKomik()
+			'komik'       => $komik->paginate(4, 'masrianto'),
+			'pager'       => $this->komikModel->pager,
+			'currentPage' => $currentPage
 		];
 
 		return view('home/blog', $data);
@@ -67,9 +79,21 @@ class Home extends BaseController
 	//--------------------------------------------------------------------
 	public function profile()
 	{
+		$currentPage = $this->request->getVar('page_masrianto') ? $this->request->getVar('page_masrianto') : 1;
+
+		$keyword = $this->request->getVar('keyword');
+		if ($keyword) {
+			$komik = $this->komikModel->search($keyword);
+		} else {
+			$komik = $this->komikModel;
+		}
+
 		$data = [
 			'title' => 'Profile',
 			'komik' => $this->komikModel->getKomik(), // ini untuk findAll
+			'komik'       => $komik->paginate(4, 'masrianto'),
+			'pager'       => $this->komikModel->pager,
+			'currentPage' => $currentPage
 
 		];
 

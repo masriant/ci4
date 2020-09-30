@@ -19,7 +19,7 @@
                   style="background-image:url('/img/transparent300x150.png')"><img class="img-responsive btn-block"
                     src="/img/<?= $m['sampul']; ?>"></a>
                 <div class="height10 hidden-xs"></div>
-                <p><a href="/home/<?= $m['slug']; ?>"><?= $m['judul']; ?></a></p>
+                <!-- <p><a href="/home/<//?= $m/['slug']; ?>"><//?= $m['judul']; ?></a></p> -->
               </div>
               <?php endforeach; ?>
             </div>

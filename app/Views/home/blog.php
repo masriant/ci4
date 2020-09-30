@@ -26,6 +26,7 @@
           </div>
         </div>
         <?php endforeach; ?>
+        <?= $pager->links('masrianto', 'masrianto_pagination'); ?>
 
       </div><!-- EndRow1 -->
 

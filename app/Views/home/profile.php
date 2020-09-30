@@ -18,6 +18,8 @@
               </span></a>
             <?php endforeach; ?>
           </div>
+          <?= $pager->links('masrianto', 'masrianto_pagination'); ?>
+
         </main>
       </div>
       <!-- EndCard -->
