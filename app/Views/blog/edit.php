@@ -64,6 +64,8 @@
         <div class="row mb-3">
           <div class="col-sm-8">
             <button type="submit" class="btn btn-outline-primary btn-sm">Ubah Data</button>
+            <a href="/blog/<?= $blog['slug']; ?>" class="btn btn-outline-success btn-sm my-3">Back to
+              <?= $blog['blog_title']; ?></a>
           </div>
         </div>
         <!--  -->

@@ -51,6 +51,8 @@
         <div class="row mb-3">
           <div class="col-sm-8">
             <button type="submit" class="btn btn-outline-primary btn-sm">Ubah Data</button>
+            <a href="/orang/<?= $orang['slug']; ?>" class="btn btn-outline-success btn-sm my-3">Back to :
+              <?= $orang['nama']; ?></a>
           </div>
         </div>
         <!--  -->

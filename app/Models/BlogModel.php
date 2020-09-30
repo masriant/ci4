@@ -19,4 +19,15 @@ class BlogModel extends Model
 
     return $this->where(['slug' => $slug])->first();
   }
+
+  public function search($keyword)
+  {
+    // $builder = $this->table('blog');
+    // $builder->like('blog_title', $keyword);
+    // return $builder;
+
+    // return $this->table('blog')->like('blog_title', $keyword);
+
+    return $this->table('blog')->like('blog_title', $keyword)->orLike('blog_description', $keyword);
+  }
 }

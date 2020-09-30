@@ -3,12 +3,14 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-6">
-      <a href="/orang/create" class="btn btn-outline-primary btn-sm my-3">Tambah Data</a>
-      <h1 class="mt-2">Daftar Peserta</h1>
+    <div class="col-md-6">
+      <h3 class="mt-2">Daftar Alamat</h3>
       <form action="" method="POST">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Masukkan keyword pencarian.." name="keyword">
+          <!-- <a href="/orang/create" class="btn btn-outline-primary btn-sm my-3">Tambah Data</a> -->
+          <a href="/orang/create" class="btn btn-outline-primary mr-2">Tambah Data</a>
+          <input type="text" class="form-control" placeholder="Masukkan keyword pencarian.." name="keyword"
+            autocomplete="" autofocus>
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
           </div>
@@ -16,6 +18,7 @@
       </form>
     </div>
   </div>
+
   <div class="row">
     <div class="col">
       <?php if (session()->getFlashdata('pesan')) : ?>

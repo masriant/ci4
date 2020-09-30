@@ -13,11 +13,23 @@ class Blog extends BaseController
   }
   public function index()
   {
+    $currentPage = $this->request->getVar('page_orang') ? $this->request->getVar('page_blog') : 1;
+
+    $keyword = $this->request->getVar('keyword');
+    if ($keyword) {
+      $blog = $this->blogModel->search($keyword);
+    } else {
+      $blog = $this->blogModel;
+    }
 
     $data = [
       'title' => 'Daftar Post',
-      'blog' => $this->blogModel->getBlog()
-      // 'blog' => $this->blogModel->findAll()
+      // 'blog' => $this->blogModel->getBlog()
+      //// 'blog' => $this->blogModel->findAll()
+
+      'blog'       => $blog->paginate(6, 'blog'),
+      'pager'       => $this->blogModel->pager,
+      'currentPage' => $currentPage
     ];
 
     return view('blog/index', $data);
