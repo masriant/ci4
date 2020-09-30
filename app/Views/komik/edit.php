@@ -61,6 +61,8 @@
         <div class="row mb-3">
           <div class="col-sm-8">
             <button type="submit" class="btn btn-primary">Ubah Data</button>
+            <a href="/komik/<?= $komik['slug']; ?>" class="btn btn-outline-success btn-sm my-3">Back to :
+              <?= $komik['judul']; ?></a>
           </div>
         </div>
         <!--  -->

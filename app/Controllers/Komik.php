@@ -13,10 +13,21 @@ class Komik extends BaseController
   }
   public function index()
   {
+    $currentPage = $this->request->getVar('page_masrianto') ? $this->request->getVar('page_masrianto') : 1;
+
+    $keyword = $this->request->getVar('keyword');
+    if ($keyword) {
+      $komik = $this->komikModel->search($keyword);
+    } else {
+      $komik = $this->komikModel;
+    }
 
     $data = [
       'title' => 'Daftar Komik',
-      'komik' => $this->komikModel->getKomik()
+      // 'komik' => $this->komikModel->getKomik(),
+      'komik'       => $komik->paginate(3, 'masrianto'),
+      'pager'       => $this->komikModel->pager,
+      'currentPage' => $currentPage
     ];
 
     return view('komik/index', $data);
