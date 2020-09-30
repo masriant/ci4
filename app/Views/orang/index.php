@@ -21,7 +21,7 @@
           </tr>
         </thead>
         <tbody>
-          <?php $i = 1; ?>
+          <?php $i = 1 + (6 * ($currentPage - 1)); ?>
           <?php foreach ($orang as $g) : ?>
           <tr>
             <th scope="row"><?= $i++; ?></th>
@@ -35,7 +35,7 @@
           <?php endforeach; ?>
         </tbody>
       </table>
-      <?= $pager->links(); ?>
+      <?= $pager->links('orang', 'orang_pagination'); ?>
     </div>
   </div>
 </div>
