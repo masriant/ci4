@@ -25,8 +25,9 @@
           <?php foreach ($orang as $g) : ?>
           <tr>
             <th scope="row"><?= $i++; ?></th>
-            <td><img src="/img/<?= $g['sampul']; ?>" alt="" class="sampul"> </td>
+            <!-- <td><img src="/img/<//?= $g/['sampul']; ?>" alt="" class="sampul"> </td> -->
             <td><?= $g['nama']; ?></td>
+            <td><?= $g['alamat']; ?></td>
             <td>
               <a href="/orang/<?= $g['slug']; ?>" class="btn btn-outline-success btn-sm">Detail</a>
             </td>
@@ -34,6 +35,7 @@
           <?php endforeach; ?>
         </tbody>
       </table>
+      <?= $pager->links(); ?>
     </div>
   </div>
 </div>
