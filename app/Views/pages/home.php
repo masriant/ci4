@@ -6,7 +6,7 @@
 $jam = date('H:i');
 
 //atur salam menggunakan IF
-if ($jam > '01:30' && $jam < '10:00') {
+if ($jam > '0:01' && $jam < '10:00') {
   $salam = 'Pagi';
 } elseif ($jam >= '10:00' && $jam < '15:00') {
   $salam = 'Siang';
@@ -24,6 +24,14 @@ if ($jam > '01:30' && $jam < '10:00') {
   <div class="row">
     <div class="col">
       <h1>Welcome back, <?= 'Selamat ' . $salam . ' ' . $nama; ?></h1>
+      <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+        Click me to display Date and Time.</button>
+
+      <p id="demo"></p>
+      <form>
+        Select a week:
+        <input type="week" name="week_year">
+      </form>
       <!-- Loading -->
       <div class="spinner-grow text-primary" role="status">
         <span class="sr-only">Loading...</span>

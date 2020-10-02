@@ -1,0 +1,124 @@
+.navbar .dropdown.multi-level-dropdown .dropdown-menu .dropdown-submenu {
+  position: relative;
+}
+
+.navbar .dropdown.multi-level-dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+}
+
+.navbar .dropdown.multi-level-dropdown .dropdown-menu .dropdown-submenu .dropdown-menu.r-100 {
+  right: 100%;
+}
+
+.navbar .dropdown.multi-level-dropdown .dropdown-menu .dropdown-submenu .dropdown-menu.l-auto {
+  left: auto;
+}
+
+.navbar .dropdown.multi-level-dropdown .dropdown-menu .dropdown-item {
+  width: 100%;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+.navbar .dropdown.multi-level-dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+
+
+/*  mega menu hover effect*/
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+body {
+  background-color: rgb(54, 50, 50);
+}
+
+main {
+  /*    height: 1650px;*/
+}
+
+/*  side nav logo . */
+.side-nav .logo-sn {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.side-nav .logo-sn img {
+  height: 38px;
+}
+
+
+/*  side nav placement*/
+.side-nav .search-form input[type=text] {
+  margin-top: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+header,
+main,
+footer {
+  padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+
+  header,
+  main,
+  footer {
+    padding-left: 0;
+  }
+}
+
+
+/* Date Tanles  */
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}
+
+.dataTable thead {
+  background: rgba(166, 165, 148, 1);
+}
+
+.dataTable tr:nth-child(even) {
+  background: rgba(166, 165, 148, .55);
+}
+
+.dataTable tr:hover {
+  background: rgba(166, 165, 148, .75);
+  cursor: pointer;
+}
+
+/* custom color gradient for section headers */
+.custom-colour-gradient-1 {
+  background-image: linear-gradient(to bottom, rgba(114, 115, 104, .5), rgba(114, 115, 104, 1));
+}
+
+
+.custom-button-info-1 {
+  background-image: linear-gradient(to bottom, rgba(124, 154, 166, .5), rgba(124, 154, 166, 1));
+}

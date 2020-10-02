@@ -6,7 +6,7 @@
     </div>
   </div>
 </div> -->
-<?= $this->extend('layout/template-menu'); ?>
+<?= $this->extend('layout/template-mega-menu'); ?>
 <?= $this->section('content'); ?>
 
 <div class="container mt-5 justify-content-center">

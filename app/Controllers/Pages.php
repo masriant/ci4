@@ -47,8 +47,23 @@ class Pages extends BaseController
     echo view('templates/header');
     echo view('templates/head', $data);
     // echo view('templates/nav');
-    echo view('templates/sidebar');
+    // echo view('templates/sidebar');
     echo view('pages/about');
+    echo view('templates/footer');
+  }
+
+  //--------------------------------------------------------------------
+
+  public function menu()
+  {
+    $data = [
+      'title' => 'menu Me',
+    ];
+    echo view('templates/header');
+    echo view('templates/head', $data);
+    // echo view('templates/nav');
+    // echo view('templates/sidebar');
+    echo view('pages/mega-menu');
     echo view('templates/footer');
   }
 

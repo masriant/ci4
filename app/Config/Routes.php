@@ -31,8 +31,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-// $routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index');
+
+// Controller Pages
 $routes->get('/', 'Pages::index');
+
+// Controller Dashboard
+$routes->get('/dashboard', 'Dashboard::index');
 
 // Controller Komik
 $routes->get('/komik/create', 'Komik::create');
@@ -60,6 +65,7 @@ $routes->get('/home/(:segment)', 'Home::detail/$1');
 
 // Khusus Controller Admin dan Users
 $routes->get('/admin', 'Admin\Admin::index');
+// $routes->get('/admin', 'Admin\Home::index');
 $routes->get('/users', 'Admin\Users::index');
 
 /**

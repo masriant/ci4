@@ -4,18 +4,29 @@ namespace App\Controllers;
 
 class Dashboard extends BaseController
 {
-
+  // public function __construct()
+  // {
+  //   helper('mr');
+  //   $this->session = service('session');
+  //   $this->auth = service('authentication');
+  // }
   public function index()
   {
-    $data = [
-      'title' => 'Dashboard'
-    ];
+    // jika belum login, user tidak memiliki akses
+    // if (!$this->auth->check()) {
+    //   $redirectURL = session('redirect_url') ?? '/login';
+    //   unset($_SESSION['redirect_url']);
+
+    //   return redirect()->to($redirectURL);
+    // }
+
+    // $data = [
+    //   'judul' => 'Dashboard'
+    // ];
 
 
-    return view('dashboard/index', $data);
-    // return view('dashboard/index');
-    // return view('dashboard/welcome_message');
-    // return view('welcome_message');
+    // return view('dashboard/index', $data);
+    return view('dashboard/index');
     // echo ('dashboard/index', $data);
     // echo 'dashboard/index';
   }
