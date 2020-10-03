@@ -67,11 +67,11 @@ $routes->get('/home/(:segment)', 'Home::detail/$1');
 $routes->get('/admin', 'Admin\Admin::index');
 $routes->get('/users', 'Admin\Users::index');
 
-$routes->get('/admin', 'Admin\Komik::index');
-$routes->get('/admin/komik/create', 'Admin\Komik::create');
-$routes->get('/admin/komik/edit/(:segment)', 'Admin\Komik::edit/$1');
-$routes->delete('/admin/komik/(:num)', 'Admin\Komik::delete/$1');
-$routes->get('/admin/komik/(:any)', 'Admin\Komik::detail/$1');
+$routes->get('/admin', 'Admin\Users::index');
+$routes->get('/admin/users/create', 'Admin\Users::create');
+$routes->get('/admin/users/edit/(:segment)', 'Admin\Users::edit/$1');
+$routes->delete('/admin/users/(:num)', 'Admin\Users::delete/$1');
+$routes->get('/admin/users/(:any)', 'Admin\Users::detail/$1');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

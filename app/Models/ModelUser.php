@@ -26,17 +26,17 @@ class ModelUser extends Model
   }
   //--------------------------------------------------------------------
 
-  public function get_data()
-  {
-    return $this->db->table('users')->get()->getResultArray();
-  }
+  // public function get_data()
+  // {
+  //   return $this->db->table('users')->get()->getResultArray();
+  // }
 
-  public function insert_data($data)
-  {
-    return $this->db->table('users')->insert($data);
-  }
-  public function update_data($id)
-  {
-    return $this->db->table('users')->update($id);
-  }
+  // public function insert_data($data)
+  // {
+  //   return $this->db->table('users')->insert($data);
+  // }
+  // public function update_data($id)
+  // {
+  //   return $this->db->table('users')->update($id);
+  // }
 }

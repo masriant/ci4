@@ -7,31 +7,37 @@
         <!-- general form elements -->
         <div class="card card-primary">
           <div class="card-header">
-            <h3 class="card-title">Tambah User Data</h3>
+            <h3 class="card-title">Edit User Data</h3>
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form action="<?= base_url('admin/users/update'); ?>" role="form" method="POST" enctype="multipart/form-data">
+          <form action="/admin/users/update/<?= $user['id']; ?>" role="form" method="POST"
+            enctype="multipart/form-data">
             <?= csrf_field(); ?>
+            <?= csrf_field(); ?>
+            <input type="hidden" name="slug" value="<?= $user['slug']; ?>">
+            <!-- <input type="hidden" name="sampulLama" value=""> -->
             <div class="card-body">
               <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" autofocus>
+                <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['nama']; ?>" autofocus>
               </div>
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Username" autofocus>
+                <input type="text" class="form-control" id="username" name="username" value="<?= $user['username']; ?>"
+                  autofocus>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                <input type="password" class="form-control" id="password" name="password"
+                  value="<?= $user['password']; ?>">
               </div>
               <div class="form-group">
                 <label for="level">Select Level</label>
                 <select class="form-control" id="level" name="level">
-                  <option value="0">select</option>
-                  <option value="admin">Admin</option>
-                  <option value="user">User</option>
+                  <option>Level sekarang = <?= $user['level']; ?></option>
+                  <option value="admin">Jadikan ==> Admin</option>
+                  <option value="user">Jadikan => User</option>
                 </select>
               </div>
               <div class="form-group">
@@ -52,6 +58,7 @@
 
             <div class="card-footer">
               <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="/admin/users/<?= $user['slug']; ?>" class="btn btn-info">Back to Daftar</a>
             </div>
           </form>
         </div><!-- /.card -->

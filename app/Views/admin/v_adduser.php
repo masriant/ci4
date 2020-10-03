@@ -47,8 +47,8 @@
                 </div>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="checkbox" class="form-check-input" id="Check1">
+                <label class="form-check-label" for="Check1">Check me out</label>
               </div>
             </div>
             <!-- /.card-body -->

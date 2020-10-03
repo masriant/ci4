@@ -44,19 +44,21 @@ class Dashboard extends BaseController
   {
     $data = [
       'title'     => 'Dashboard',
-      'user'      => $this->ModelUser->get_data(),
+      'user'      => $this->ModelUser->getUsers(),
+      // 'user'      => $this->ModelUser->get_data(),
       'content'   => 'users/index'
     ];
     echo view('layout/content_wrapper_users', $data);
   }
 
   //--------------------------------------------------------------------
-  public function detail()
+  public function detail($slug)
   {
     $data = [
       'title'     => 'Dashboard',
-      'user'      => $this->ModelUser->get_data(),
-      'content'   => 'users/index'
+      // 'user'      => $this->ModelUser->get_data(),
+      'user'      => $this->ModelUser->getUsers($slug),
+      'content'   => 'users/detail'
     ];
     echo view('layout/content_wrapper_users', $data);
   }
