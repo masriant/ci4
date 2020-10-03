@@ -25,6 +25,7 @@
        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
          <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+         <!-- Dashboard -->
          <li class="nav-item has-treeview">
            <a href="#" class="nav-link">
              <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -37,35 +38,92 @@
              <li class="nav-item">
                <a href="<?= base_url('/dashboard'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
-                 <p>Dashboard v1</p>
+                 <p>Dashboard</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="<?= base_url('/dashboard2'); ?>" class="nav-link active">
+               <a href="<?= base_url('/dashboard/user'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
-                 <p>Dashboard v2</p>
+                 <p>Pengguna</p>
                </a>
              </li>
              <li class="nav-item">
                <a href="<?= base_url('/komik'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
-                 <p>Dashboard v3</p>
+                 <p>Komik</p>
                </a>
              </li>
+             <li class="nav-item">
+               <a href="<?= base_url('/blog'); ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Blog</p>
+               </a>
+             </li>
+
+
+           </ul>
+         </li>
+         <!-- Admin -->
+         <li class="nav-item has-treeview">
+           <a href="#" class="nav-link">
+             <i class="nav-icon fas fa-user"></i>
+             <p>
+               Admin
+               <i class="right fas fa-angle-left"></i>
+             </p>
+           </a>
+           <ul class="nav nav-treeview">
              <li class="nav-item">
                <a href="<?= base_url('/admin'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
-                 <p>Dashboard Admin</p>
+                 <p>Admin</p>
                </a>
              </li>
              <li class="nav-item">
-               <a href="<?= base_url('/admin/users'); ?>" class="nav-link">
+               <a href="<?= base_url('/admin/admin/dashboard'); ?>" class="nav-link">
                  <i class="far fa-circle nav-icon"></i>
-                 <p>Dashboard users</p>
+                 <p>Dashboard</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="<?= base_url('/admin/admin/home'); ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Home</p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="<?= base_url('/admin/admin/chartsflot'); ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Charts Flot </p>
+               </a>
+             </li>
+             <li class="nav-item">
+               <a href="<?= base_url('/admin/admin/charts'); ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Charts JS</p>
                </a>
              </li>
            </ul>
          </li>
+         <!-- Admin Users -->
+         <li class="nav-item has-treeview">
+           <a href="#" class="nav-link">
+             <i class="nav-icon fas fa-users"></i>
+             <p>
+               Users
+               <i class="right fas fa-angle-left"></i>
+             </p>
+           </a>
+           <ul class="nav nav-treeview">
+             <li class="nav-item">
+               <a href="<?= base_url('/admin/users'); ?>" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>Users</p>
+               </a>
+             </li>
+           </ul>
+         </li>
+         <!-- Link Bootsrap -->
          <li class="nav-item">
            <a href="<?= base_url('/dashboard2'); ?>" class="nav-link">
              <i class="nav-icon fas fa-th"></i>
@@ -84,25 +142,7 @@
              </p>
            </a>
          </li>
-         <li class="nav-item">
-           <a href="<?= base_url('/admin'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-th"></i>
-             <p>
-               Admin
-               <span class="right badge badge-danger">New</span>
-             </p>
-           </a>
-         </li>
 
-         <li class="nav-item">
-           <a href="<?= base_url('/admin/admin/home'); ?>" class="nav-link">
-             <i class="nav-icon fas fa-th"></i>
-             <p>
-               Admin Home
-               <span class="right badge badge-danger">New</span>
-             </p>
-           </a>
-         </li>
 
 
        </ul>

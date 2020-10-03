@@ -18,3 +18,25 @@ function previewImg() {
   }
 
 }
+
+// Datatable admin LTE
+$(function () {
+  $("#datauser1").DataTable({
+    "responsive": true,
+    "autoWidth": false,
+  });
+
+  $('#datauser2').DataTable({
+    "paging": true,
+    "lengthChange": false,
+    "searching": false,
+    "ordering": true,
+    "info": true,
+    "autoWidth": false,
+    "responsive": true,
+  });
+});
+
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});

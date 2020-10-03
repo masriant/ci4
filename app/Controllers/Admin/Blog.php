@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
+
+use App\Controllers\BaseController;
 
 use App\Models\BlogModel;
 
@@ -35,6 +37,7 @@ class Blog extends BaseController
 
     $data = [
       'title' => 'Daftar Post',
+      'content'   => 'blog/index'
       // 'blog' => $this->blogModel->getBlog()
       //// 'blog' => $this->blogModel->findAll()
 
@@ -43,7 +46,8 @@ class Blog extends BaseController
       'currentPage' => $currentPage
     ];
 
-    return view('blog/index', $data);
+    // return view('blog/index', $data);
+    echo view('layout/content_wrapper_admin', $data);
   }
   //--------------------------------------------------------------------
 

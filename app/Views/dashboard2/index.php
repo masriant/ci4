@@ -3,29 +3,32 @@
 
 
 <!-- Main content disini-->
+<!-- Main content -->
 <section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-outline card-info">
+        <div class="card-header">
 
-  <!-- Default box -->
-  <div class="card">
-    <div class="card-header">
-      <h3 class="card-title">Index</h3>
 
-      <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-          <i class="fas fa-minus"></i></button>
-        <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-          <i class="fas fa-times"></i></button>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body pad">
+          <div class="mb-3">
+            <textarea class="textarea" placeholder="Place some text here"
+              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+          </div>
+
+        </div>
       </div>
     </div>
-    <div class="card-body">
-      Start creating your amazing application!
-    </div><!-- /.card-body -->
-    <div class="card-footer">
-      Footer
-    </div><!-- /.card-footer-->
-  </div><!-- /.card -->
+    <!-- /.col-->
+  </div>
+  <!-- ./row -->
+</section>
+<!-- /.content -->
 
-</section><!-- endkonten disini "content" -->
+<!-- endkonten disini "content" -->
 
 
 <!-- <//?= $this->endSection(); ?> -->

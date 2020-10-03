@@ -2,40 +2,62 @@
 
 namespace App\Controllers;
 
+use App\Models\ModelUser;
+
 class Dashboard extends BaseController
 {
+  protected $ModelUser;
+
+  public function __construct()
+  {
+    $this->ModelUser = new ModelUser();
+  }
 
   public function index()
   {
-    $data = [
-      'title' => 'Dashboard'
-    ];
-
-
-    return view('dashboard/index', $data);
-    // return view('dashboard/index');
-    // return view('dashboard/welcome_message');
-    // return view('welcome_message');
-    // echo ('dashboard/index', $data);
-    // echo 'dashboard/index';
-  }
-
-  //--------------------------------------------------------------------
-  public function coba()
-  {
-    // return view('welcome_message');
-    echo 'Hello Dashboard 2';
-  }
-
-  //--------------------------------------------------------------------
-  public function home()
-  {
-    $data = [
-      'title' => 'Home'
-
-    ];
-
+    // $data = [
+    //   'title' => 'Dashboard'
+    // ];
     // return view('dashboard/index', $data);
-    echo view('dashboard/index', $data);
+
+    $data = [
+      'title'     => 'Admin Dashboard',
+      'content'   => 'admin/v_dashboard'
+    ];
+
+    echo view('layout/content_wrapper_users', $data);
+  }
+
+  //--------------------------------------------------------------------
+  public function admin()
+  {
+    $data = [
+      'title'     => ' Dashboard Admin',
+      'content'   => 'admin/v_dashboard'
+    ];
+
+    echo view('layout/content_wrapper_users', $data);
+  }
+
+  //--------------------------------------------------------------------
+  public function user()
+  {
+    $data = [
+      'title'     => 'Dashboard',
+      'user'      => $this->ModelUser->get_data(),
+      'content'   => 'users/index'
+    ];
+    echo view('layout/content_wrapper_users', $data);
+  }
+
+  //--------------------------------------------------------------------
+  public function detail()
+  {
+    $data = [
+      'title'     => 'Dashboard',
+      'user'      => $this->ModelUser->get_data(),
+      'content'   => 'users/index'
+    ];
+    echo view('layout/content_wrapper_users', $data);
   }
 }

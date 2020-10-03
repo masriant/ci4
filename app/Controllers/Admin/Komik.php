@@ -1,49 +1,37 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Admin;
 
-use App\Models\BlogModel;
+use App\Controllers\BaseController;
+use App\Models\KomikModel;
 
-class Blog extends BaseController
+class Komik extends BaseController
 {
-  protected $blogModel;
+  protected $komikModel;
   public function __construct()
   {
-    $this->blogModel = new BlogModel();
-    // helper('mr');
-    // $this->session = service('session');
-    // $this->auth = service('authentication');
+    $this->komikModel = new KomikModel();
   }
   public function index()
   {
-    // jika belum login, user tidak memiliki akses
-    // if (!$this->auth->check()) {
-    //   $redirectURL = session('redirect_url') ?? '/login';
-    //   unset($_SESSION['redirect_url']);
-
-    //   return redirect()->to($redirectURL);
-    // }
-
-    $currentPage = $this->request->getVar('page_orang') ? $this->request->getVar('page_blog') : 1;
+    $currentPage = $this->request->getVar('page_masrianto') ? $this->request->getVar('page_masrianto') : 1;
 
     $keyword = $this->request->getVar('keyword');
     if ($keyword) {
-      $blog = $this->blogModel->search($keyword);
+      $komik = $this->komikModel->search($keyword);
     } else {
-      $blog = $this->blogModel;
+      $komik = $this->komikModel;
     }
 
     $data = [
-      'title' => 'Daftar Post',
-      // 'blog' => $this->blogModel->getBlog()
-      //// 'blog' => $this->blogModel->findAll()
-
-      'blog'       => $blog->paginate(6, 'blog'),
-      'pager'       => $this->blogModel->pager,
+      'title' => 'Daftar Komik',
+      // 'komik' => $this->komikModel->getKomik(),
+      'komik'       => $komik->paginate(3, 'masrianto'),
+      'pager'       => $this->komikModel->pager,
       'currentPage' => $currentPage
     ];
 
-    return view('blog/index', $data);
+    return view('komik/index', $data);
   }
   //--------------------------------------------------------------------
 
@@ -51,14 +39,14 @@ class Blog extends BaseController
   {
 
     $data = [
-      'title' => 'Detail Post',
-      'blog' => $this->blogModel->getBlog($slug)
+      'title' => 'Detail Komik',
+      'komik' => $this->komikModel->getKomik($slug)
     ];
 
-    if (empty($data['blog'])) {
+    if (empty($data['komik'])) {
       throw new \CodeIgniter\Exceptions\PageNotFoundException('Data yang dicari adalah " ' . $slug . ' " tidak ditemukan dalam database kami.');
     }
-    return view('blog/detail', $data);
+    return view('komik/detail', $data);
   }
 
   //--------------------------------------------------------------------
@@ -67,11 +55,11 @@ class Blog extends BaseController
   {
 
     $data = [
-      'title' => 'Tambah Artikel',
+      'title' => 'Form Tambah Data',
       'validation' => \Config\Services::validation()
     ];
 
-    return view('blog/create', $data);
+    return view('komik/create', $data);
   }
 
   //--------------------------------------------------------------------
@@ -79,24 +67,33 @@ class Blog extends BaseController
   {
 
     if (!$this->validate([
-      'blog_title' =>
+      'judul' =>
       [
-        'rules' => 'required|is_unique[blog.blog_title]',
+        'rules' => 'required|is_unique[komik.judul]',
         'errors' => [
-          'required' => 'judul harus diisi.',
+          'required' => '{field} harus diisi.',
           'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
-      'blog_description' =>
+      'penulis' =>
       [
-        'rules' => 'required',
+        'rules' => 'required|is_unique[komik.penulis]',
         'errors' => [
           'required' => '{field} harus diisi.',
+          'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'penerbit' =>
+      [
+        'rules' => 'required|is_unique[komik.penerbit]',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
       'sampul' =>
       [
-        'rules' => 'max_size[sampul,5024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
+        'rules' => 'max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
         'errors' => [
           'max_size' => 'ukuran gambar {field} terlalu besar.',
           'is_image' => 'photo {field} yang anda pilih bukan gambar.',
@@ -106,7 +103,7 @@ class Blog extends BaseController
 
     ])) {
 
-      return redirect()->to('/blog/create')->withInput();
+      return redirect()->to('/komik/create')->withInput();
     }
 
     // ambil gambar
@@ -121,34 +118,36 @@ class Blog extends BaseController
       $fileSampul->move('img', $namaSampul);
     }
 
-    $slug = url_title($this->request->getVar('blog_title'), '-', true);
-    $this->blogModel->save([
-      'blog_title' => $this->request->getVar('blog_title'),
+
+    $slug = url_title($this->request->getVar('judul'), '-', true);
+    $this->komikModel->save([
+      'judul' => $this->request->getVar('judul'),
       'slug' => $slug,
-      'blog_description' => $this->request->getVar('blog_description'),
+      'penulis' => $this->request->getVar('penulis'),
+      'penerbit' => $this->request->getVar('penerbit'),
       'sampul' => $namaSampul
     ]);
 
     session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
 
-    return redirect()->to('/blog');
+    return redirect()->to('/komik');
   }
 
   //--------------------------------------------------------------------
   public function delete($id)
   {
     // cari gambar/sampul berdasarkan "id"
-    $blog = $this->blogModel->find($id);
+    $komik = $this->komikModel->find($id);
 
     // cek jika gambar/sampul default.jpg
-    if ($blog['sampul'] != 'default.jpg') {
+    if ($komik['sampul'] != 'default.jpg') {
       // Hapus gambar/sampul
-      unlink('img/' . $blog['sampul']);
+      unlink('img/' . $komik['sampul']);
     }
 
-    $this->blogModel->delete($id);
+    $this->komikModel->delete($id);
     session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-    return redirect()->to('/blog');
+    return redirect()->to('/komik');
   }
 
   //--------------------------------------------------------------------
@@ -157,33 +156,40 @@ class Blog extends BaseController
     $data = [
       'title' => 'Form Ubah Data',
       'validation' => \Config\Services::validation(),
-      'blog' => $this->blogModel->getBlog($slug)
+      'komik' => $this->komikModel->getKomik($slug)
     ];
 
-    return view('blog/edit', $data);
+    return view('komik/edit', $data);
   }
 
   //--------------------------------------------------------------------
   public function update($id)
   {
 
-    $blogLama = $this->blogModel->getBlog($this->request->getVar('slug'));
-    if ($blogLama['blog_title'] == $this->request->getVar('blog_title')) {
-      $rule_blog_title = 'required';
+    $komikLama = $this->komikModel->getKomik($this->request->getVar('slug'));
+    if ($komikLama['judul'] == $this->request->getVar('judul')) {
+      $rule_judul = 'required';
     } else {
-      $rule_blog_title = 'required|is_unique[blog.blog_title]';
+      $rule_judul = 'required|is_unique[komik.judul]';
     }
 
     if (!$this->validate([
-      'blog_title' =>
+      'judul' =>
       [
-        'rules' => $rule_blog_title,
+        'rules' => $rule_judul,
         'errors' => [
-          'required' => 'judul harus diisi.',
+          'required' => '{field} harus diisi.',
           'is_unique' => '{field} sudah terdaftar.'
         ]
       ],
-      'blog_description' =>
+      'penulis' =>
+      [
+        'rules' => 'required',
+        'errors' => [
+          'required' => '{field} harus diisi.'
+        ]
+      ],
+      'penerbit' =>
       [
         'rules' => 'required',
         'errors' => [
@@ -192,7 +198,7 @@ class Blog extends BaseController
       ],
       'sampul' =>
       [
-        'rules' => 'max_size[sampul,5024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
+        'rules' => 'max_size[sampul,1024]|is_image[sampul]|mime_in[sampul,image/jpg,image/jpeg,image/png]',
         'errors' => [
           'max_size' => 'ukuran gambar {field} terlalu besar.',
           'is_image' => 'photo {field} yang anda pilih bukan gambar.',
@@ -202,7 +208,7 @@ class Blog extends BaseController
 
     ])) {
 
-      return redirect()->to('/blog/edit/' . $this->request->getVar('slug'))->withInput();
+      return redirect()->to('/komik/edit/' . $this->request->getVar('slug'))->withInput();
     }
 
     $fileSampul = $this->request->getFile('sampul');
@@ -219,17 +225,18 @@ class Blog extends BaseController
       unlink('img/' . $this->request->getVar('sampulLama'));
     }
 
-    $slug = url_title($this->request->getVar('blog_title'), '-', true);
-    $this->blogModel->save([
+    $slug = url_title($this->request->getVar('judul'), '-', true);
+    $this->komikModel->save([
       'id' => $id,
-      'blog_title' => $this->request->getVar('blog_title'),
+      'judul' => $this->request->getVar('judul'),
       'slug' => $slug,
-      'blog_description' => $this->request->getVar('blog_description'),
+      'penulis' => $this->request->getVar('penulis'),
+      'penerbit' => $this->request->getVar('penerbit'),
       'sampul' => $namaSampul
     ]);
 
     session()->setFlashdata('pesan', 'Data berhasil diubah.');
 
-    return redirect()->to('/blog');
+    return redirect()->to('/komik');
   }
 }
