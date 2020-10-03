@@ -6,6 +6,10 @@ use App\Models\KomikModel;
 
 class Home extends BaseController
 {
+	// function test()
+	// {
+	// 	echo password_hash('admin', PASSWORD_BCRYPT);
+	// }
 	protected $komikModel;
 	public function __construct()
 	{
@@ -13,6 +17,7 @@ class Home extends BaseController
 	}
 	public function index()
 	{
+
 		$currentPage = $this->request->getVar('page_masrianto') ? $this->request->getVar('page_masrianto') : 1;
 
 		$keyword = $this->request->getVar('keyword');
