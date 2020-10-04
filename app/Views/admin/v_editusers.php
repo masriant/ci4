@@ -14,27 +14,40 @@
           <form action="/admin/users/update/<?= $user['id']; ?>" role="form" method="POST"
             enctype="multipart/form-data">
             <?= csrf_field(); ?>
-            <input type="hidden" name="slug" value="<?= $user['slug']; ?>">
+            <input type="hidden" name="slug" value="<?= (old('slug')) ? old('slug') : $user['slug'] ?>">
             <!-- <input type="hidden" name="sampulLama" value=""> -->
             <div class="card-body">
               <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['nama']; ?>" autofocus>
+                <input type="text" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>"
+                  id="nama" name="nama" value="<?= (old('nama')) ? old('nama') : $user['nama'] ?>" autofocus>
+                <div class="invalid-feedback">
+                  <?= $validation->getError('nama'); ?>
+                </div>
               </div>
               <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" value="<?= $user['username']; ?>"
+                <input type="text" class="form-control <?= ($validation->hasError('username')) ? 'is-invalid' : ''; ?>"
+                  id="username" name="username" value="<?= (old('username')) ? old('username') : $user['username'] ?>"
                   autofocus>
+                <div class="invalid-feedback">
+                  <?= $validation->getError('username'); ?>
+                </div>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password"
-                  value="<?= $user['password']; ?>">
+                <input type="password"
+                  class="form-control <?= ($validation->hasError('password')) ? 'is-invalid' : ''; ?>" id="password"
+                  name="password" value="<?= (old('password')) ? old('password') : $user['password'] ?>">
+                <div class="invalid-feedback">
+                  <?= $validation->getError('password'); ?>
+                </div>
               </div>
               <div class="form-group">
                 <label for="level">Select Level</label>
-                <select class="form-control" id="level" name="level">
-                  <option value="<?= $user['level']; ?>">
+                <select class="form-control <?= ($validation->hasError('level')) ? 'is-invalid' : ''; ?>" id="level"
+                  name="level">
+                  <option value="<?= (old('level')) ? old('level') : $user['level'] ?>">
                     <?php
                     if ($user['level']) {
                       echo $user['level'];
@@ -46,8 +59,11 @@
                   <option value="admin">Admin</option>
                   <option value="user">User</option>
                 </select>
+                <div class="invalid-feedback">
+                  <?= $validation->getError('level'); ?>
+                </div>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="InputFile">File input</label>
                 <div class="input-group">
                   <div class="custom-file">
@@ -58,7 +74,7 @@
                     <span class="input-group-text" id="">Upload</span>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
             </div>
             <!-- /.card-body -->

@@ -36,7 +36,8 @@
 
         <div class="form-group row">
           <div class="col-12">
-            <input class="form-control" type="text" placeholder="Username" name="userid" id="userid" autofocus>
+            <input class="form-control" type="text" placeholder="Username" name="userid" id="userid" autofocus
+              autocomplete="off">
             <div class="invalid-feedback errorUserID">
             </div>
           </div>

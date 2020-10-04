@@ -12,7 +12,7 @@ class Dashboard2 extends BaseController
       'content'   => 'dashboard2/index'
     ];
 
-    echo view('layout/content_wrapper', $data);
+    echo view('layout/content_wrapper_users', $data);
   }
 
   //--------------------------------------------------------------------
@@ -23,7 +23,7 @@ class Dashboard2 extends BaseController
       'content'   => 'dashboard2/contact'
     ];
 
-    echo view('layout/content_wrapper', $data);
+    echo view('layout/content_wrapper_users', $data);
   }
 
   //--------------------------------------------------------------------

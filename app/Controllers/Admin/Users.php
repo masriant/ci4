@@ -61,6 +61,7 @@ class Users extends BaseController
     $data = [
       'title'     => 'Edit Data Pengguna',
       'user'      => $this->ModelUser->getUsers($slug),
+      'validation' => \Config\Services::validation(),
       'content'   => 'admin/v_editusers'
     ];
     echo view('layout/content_wrapper_users', $data);
@@ -141,6 +142,30 @@ class Users extends BaseController
         'errors' => [
           'required' => '{field} harus diisi.',
           'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'username' =>
+      [
+        'rules' => 'required',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          // 'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'password' =>
+      [
+        'rules' => 'required',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          // 'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'level' =>
+      [
+        'rules' => 'required',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          // 'is_unique' => '{field} sudah terdaftar.'
         ]
       ]
     ])) {

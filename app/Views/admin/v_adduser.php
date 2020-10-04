@@ -64,16 +64,16 @@
                   </div>
                 </div>
               </div>-->
-              <div class="form-check">
+              <!-- <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="Check1" required>
                 <label class="form-check-label" for="Check1">Check me out</label>
               </div>
-            </div>
-            <!-- /.card-body -->
+            </div> -->
+              <!-- /.card-body -->
 
-            <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
           </form>
         </div><!-- /.card -->
 
