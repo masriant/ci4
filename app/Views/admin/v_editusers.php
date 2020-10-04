@@ -14,7 +14,6 @@
           <form action="/admin/users/update/<?= $user['id']; ?>" role="form" method="POST"
             enctype="multipart/form-data">
             <?= csrf_field(); ?>
-            <?= csrf_field(); ?>
             <input type="hidden" name="slug" value="<?= $user['slug']; ?>">
             <!-- <input type="hidden" name="sampulLama" value=""> -->
             <div class="card-body">
@@ -35,9 +34,17 @@
               <div class="form-group">
                 <label for="level">Select Level</label>
                 <select class="form-control" id="level" name="level">
-                  <option>Level sekarang = <?= $user['level']; ?></option>
-                  <option value="admin">Jadikan ==> Admin</option>
-                  <option value="user">Jadikan => User</option>
+                  <option value="<?= $user['level']; ?>">
+                    <?php
+                    if ($user['level']) {
+                      echo $user['level'];
+                    } else {
+                      echo "Select Level";
+                    } ?>
+
+                  </option>
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
                 </select>
               </div>
               <div class="form-group">
@@ -58,7 +65,8 @@
 
             <div class="card-footer">
               <button type="submit" class="btn btn-primary">Submit</button>
-              <a href="/admin/users/<?= $user['slug']; ?>" class="btn btn-info">Back to Daftar</a>
+              <!-- <a href="/admin/users/<//?= $//user['slug']; ?>" class="btn btn-info">Back to Daftar</a> -->
+              <a href="/admin/<?= $user['slug']; ?>" class="btn btn-info">Back to Daftar</a>
             </div>
           </form>
         </div><!-- /.card -->

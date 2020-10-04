@@ -31,21 +31,33 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
+// $routes->get('/', 'Layout::index', ['filter' => 'ceklogin']);
+// Pasang ke semua yang akan di filter => , ['filter' => 'ceklogin']);
+// Controller Dashboard
+// $routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/dashboard', 'Dashboard::index', ['filter' => 'ceklogin']);
+$routes->get('/dashboard/user', 'Dashboard::user', ['filter' => 'ceklogin']);
+$routes->get('/dashboard/(:any)', 'Dashboard::detail/$1', ['filter' => 'ceklogin']);
+$routes->get('/dashboard/(:any)', 'Dashboard::$1', ['filter' => 'ceklogin']);
+$routes->get('/dashboard', 'Dashboard::$1', ['filter' => 'ceklogin']);
+
+
+
+$routes->get('/dashboard2/(:any)', 'Dashboard::$1', ['filter' => 'ceklogin']);
+
 
 // Controller Pages
-$routes->get('/', 'Pages::index');
+// $routes->get('/', 'Pages::index');
 
-// Controller Dashboard
-$routes->get('/dashboard', 'Dashboard::index');
-$routes->get('/dashboard/user', 'Dashboard::user');
-$routes->get('/dashboard/(:any)', 'Dashboard::detail/$1');
 
 // Controller Komik
 $routes->get('/komik/create', 'Komik::create');
 $routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');
 $routes->delete('/komik/(:num)', 'Komik::delete/$1');
 $routes->get('/komik/(:any)', 'Komik::detail/$1');
+$routes->get('/komik/(:any)', 'Komik::$1', ['filter' => 'ceklogin']);
+$routes->get('/komik', 'Komik::$1', ['filter' => 'ceklogin']);
 
 // Controller Orang
 $routes->get('/orang/create', 'Orang::create');
@@ -66,14 +78,54 @@ $routes->get('/home/profile', 'Home::profile');
 $routes->get('/home/(:segment)', 'Home::detail/$1');
 
 // Khusus Controller Admin dan Users
-$routes->get('/admin', 'Admin\Admin::index');
-$routes->get('/users', 'Admin\Users::index');
+// $routes->get('/admin', 'Admin\Admin::index');
+// $routes->get('/users', 'Admin\Users::index');
 
-$routes->get('/admin', 'Admin\Users::index');
-$routes->get('/admin/users/create', 'Admin\Users::create');
-$routes->get('/admin/users/edit/(:segment)', 'Admin\Users::edit/$1');
-$routes->delete('/admin/users/(:num)', 'Admin\Users::delete/$1');
-$routes->get('/admin/users/(:any)', 'Admin\Users::detail/$1');
+
+// $routes->get('/admin', 'Admin\Users::index');
+// $routes->get('/admin/users/create', 'Admin\Users::create');
+// $routes->get('/admin/users/edit/(:segment)', 'Admin\Users::edit/$1');
+// $routes->get('/admin/users/update/(:segment)', 'Admin\Users::update/$1');
+// $routes->delete('/admin/users/(:num)', 'Admin\Users::delete/$1');
+// $routes->get('/admin/users/(:any)', 'Admin\Users::detail/$1');
+
+// Khusus Controller Admin = Admin\Users
+// $routes->get('/admin', 'Admin\Users::index', ['filter' => 'ceklogin']);
+// $routes->get('/admin/users', 'Admin\Users::index', ['filter' => 'ceklogin']);
+// $routes->get('/admin/users/create', 'Admin\Users::create', ['filter' => 'ceklogin']);
+// $routes->get('/admin/users/edit/(:segment)', 'Admin\Users::edit/$1', ['filter' => 'ceklogin']);
+// $routes->get('/admin/users/update/(:segment)', 'Admin\Users::update/$1', ['filter' => 'ceklogin']);
+// $routes->delete('/admin/users/(:num)', 'Admin\Users::delete/$1', ['filter' => 'ceklogin']);
+// $routes->get('/admin/users/(:any)', 'Admin\Users::detail/$1', ['filter' => 'ceklogin']);
+
+// Khusus Controller Admin = Admin
+$routes->get('/admin', 'Admin\Users::index', ['filter' => 'ceklogin']);
+$routes->get('/admin/users', 'Admin\Users::index', ['filter' => 'ceklogin']);
+$routes->get('/admin/create', 'Admin\Users::create', ['filter' => 'ceklogin']);
+$routes->get('/admin/edit/(:segment)', 'Admin\Users::edit/$1', ['filter' => 'ceklogin']);
+// $routes->get('/admin/update/(:segment)', 'Admin\Users::update/$1', ['filter' => 'ceklogin']);
+$routes->delete('/admin/(:num)', 'Admin\Users::delete/$1', ['filter' => 'ceklogin']);
+$routes->get('/admin/(:any)', 'Admin\Users::detail/$1', ['filter' => 'ceklogin']);
+$routes->get('/admin/(:any)', 'Admin\Users::$1', ['filter' => 'ceklogin']);
+//// $routes->get('/admin', 'Admin\Users::$1', ['filter' => 'ceklogin']);
+
+// Khusus Controller Users = Users
+// $routes->get('/users', 'Admin\Users::index', ['filter' => 'ceklogin']);
+// $routes->get('/users/create', 'Admin\Users::create', ['filter' => 'ceklogin']);
+// $routes->get('/users/edit/(:segment)', 'Admin\Users::edit/$1', ['filter' => 'ceklogin']);
+// $routes->get('/users/update/(:segment)', 'Admin\Users::update/$1', ['filter' => 'ceklogin']);
+// $routes->delete('/users/(:num)', 'Admin\Users::delete/$1', ['filter' => 'ceklogin']);
+// $routes->get('/users/(:any)', 'Admin\Users::detail/$1', ['filter' => 'ceklogin']);
+
+// Khusus Controller Users = Admin\Users
+$routes->get('/users', 'Admin\Users::index', ['filter' => 'ceklogin']);
+$routes->get('/users/create', 'Admin\Users::create', ['filter' => 'ceklogin']);
+$routes->get('/users/edit/(:segment)', 'Admin\Users::edit/$1', ['filter' => 'ceklogin']);
+// $routes->get('/users/update/(:segment)', 'Admin\Users::update/$1', ['filter' => 'ceklogin']);
+$routes->delete('/users/(:num)', 'Admin\Users::delete/$1', ['filter' => 'ceklogin']);
+$routes->get('/users/(:any)', 'Admin\Users::detail/$1', ['filter' => 'ceklogin']);
+$routes->get('/users/(:any)', 'Admin\Users::$1', ['filter' => 'ceklogin']);
+// $routes->get('/users', 'Admin\Users::$1', ['filter' => 'ceklogin']);
 /**
  * --------------------------------------------------------------------
  * Additional Routing

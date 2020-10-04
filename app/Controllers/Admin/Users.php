@@ -49,6 +49,7 @@ class Users extends BaseController
   {
     $data = [
       'title'     => 'Tambah Data Pengguna',
+      'validation' => \Config\Services::validation(),
       'content'   => 'admin/v_adduser'
     ];
     echo view('layout/content_wrapper_users', $data);
@@ -76,10 +77,35 @@ class Users extends BaseController
           'required' => '{field} harus diisi.',
           'is_unique' => '{field} sudah terdaftar.'
         ]
+      ],
+      'username' =>
+      [
+        'rules' => 'required',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          // 'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'password' =>
+      [
+        'rules' => 'required',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          // 'is_unique' => '{field} sudah terdaftar.'
+        ]
+      ],
+      'level' =>
+      [
+        'rules' => 'required',
+        'errors' => [
+          'required' => '{field} harus diisi.',
+          // 'is_unique' => '{field} sudah terdaftar.'
+        ]
       ]
     ])) {
 
-      return redirect()->to('/admin/users/create')->withInput();
+      // return redirect()->to('/admin/users/create')->withInput();
+      return redirect()->to('/admin/create')->withInput();
     }
 
     $slug = url_title($this->request->getVar('nama'), '-', true);
@@ -119,7 +145,8 @@ class Users extends BaseController
       ]
     ])) {
 
-      return redirect()->to('/admin/users/edit/' . $this->request->getVar('slug'))->withInput();
+      // return redirect()->to('/admin/users/edit/' . $this->request->getVar('slug'))->withInput();
+      return redirect()->to('/admin/edit/' . $this->request->getVar('slug'))->withInput();
     }
 
     $slug = url_title($this->request->getVar('nama'), '-', true);

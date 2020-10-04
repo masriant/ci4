@@ -56,10 +56,12 @@
           </div>
 
           <div class="card-footer">
-            <a href="/admin/users/edit/<?= $user['slug']; ?>" class="btn btn-outline-warning btn-xs"><i
+            <!-- <a href="/admin/users/edit/<//?= $user//['slug']; ?>" class="btn btn-outline-warning btn-xs"><i -->
+            <a href="/admin/edit/<?= $user['slug']; ?>" class="btn btn-outline-warning btn-xs"><i
                 class="fas fa-user-edit"> Edit</i></a>
             <?= csrf_field(); ?>
-            <form action="/admin/users/<?= $user['id']; ?>" method="POST" class="d-inline">
+            <!-- <form action="/admin/users/<?= $user['id']; ?>" method="POST" class="d-inline"> -->
+            <form action="/admin/<?= $user['id']; ?>" method="POST" class="d-inline">
               <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn btn-outline-danger btn-xs"
                 onclick="return confirm('Apakah anda yakin?');"><i class="fas fa-trash"> Delete</i></button>
