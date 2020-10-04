@@ -38,6 +38,8 @@ $routes->get('/', 'Pages::index');
 
 // Controller Dashboard
 $routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/dashboard/user', 'Dashboard::user');
+$routes->get('/dashboard/(:any)', 'Dashboard::detail/$1');
 
 // Controller Komik
 $routes->get('/komik/create', 'Komik::create');
