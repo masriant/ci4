@@ -242,7 +242,6 @@ hr {
   background-color: #9e9e9e
 }
 
-.bgnoise {}
 
 .padding20 {
   padding: 20px
@@ -416,8 +415,8 @@ hr {
 .blog .thumbnail .block-meta img {
   display: inline;
   margin-right: 5px;
-  width: 32px;
-  height: 32px
+  /* width: 32px; */
+  /* height: 32px */
 }
 
 .blog-detail {

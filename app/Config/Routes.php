@@ -17,7 +17,8 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Import');
+// $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -32,8 +33,15 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
+$routes->get('/', 'Import::index');
+
 // $routes->get('/', 'Layout::index', ['filter' => 'ceklogin']);
+
 // Pasang ke semua yang akan di filter => , ['filter' => 'ceklogin']);
+
+// $routes->get('/layout/(:any)', 'Layout::$1', ['filter' => 'ceklogin']);
+// $routes->get('/layout', 'Layout::index', ['filter' => 'ceklogin']);
+
 // Controller Dashboard
 // $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'ceklogin']);

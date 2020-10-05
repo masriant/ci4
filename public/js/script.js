@@ -40,3 +40,51 @@ $(function () {
 $(document).ready(function () {
   bsCustomFileInput.init();
 });
+
+$(document).ready(function () {
+  $('.formlogin').submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "post",
+      url: $(this).attr('action'),
+      data: $(this).serialize(),
+      dataType: "json",
+      beforeSend: function () {
+        $('.btnlogin').prop('disabled', true);
+        $('.btnlogin').html('<i class="fa fa-spin fa-spinner"></i>');
+      },
+      complete: function () {
+        $('.btnlogin').prop('disabled', false);
+        $('.btnlogin').html('Login');
+      },
+      success: function (response) {
+        if (response.error) {
+          if (response.error.userid) {
+            $('#userid').addClass('is-invalid');
+            $('.errorUserID').html(response.error.userid);
+          } else {
+            $('#userid').removeClass('is-invalid');
+            $('.errorUserID').html('');
+          }
+
+          if (response.error.password) {
+            $('#pass').addClass('is-invalid');
+            $('.errorPassword').html(response.error.password);
+          } else {
+            $('#pass').removeClass('is-invalid');
+            $('.errorPassword').html('');
+          }
+        }
+
+        if (response.sukses) {
+          window.location = response.sukses.link;
+        }
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status + "\n" + xhr.responseText + "\n" +
+          thrownError);
+      }
+    });
+    return false;
+  });
+});

@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 /**
  * Holds the paths that are used by the system to
@@ -21,6 +23,7 @@ class Paths
 	 * as this file.
 	 */
 	public $systemDirectory = __DIR__ . '/../../vendor/codeigniter4/framework/system';
+	// public $phpexcelDirectory = __DIR__ . '/../../vendor/phpoffice/phpexcel/Classes/PHPExcel.php';
 
 	/*
 	 *---------------------------------------------------------------

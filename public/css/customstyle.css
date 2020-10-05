@@ -1,0 +1,142 @@
+/* wrapper = pembungkus
+1. #outer-wrapper / #outer-wrap /#outer
+2. #header-wrapper / #header-wrap / #header
+3. #content wrapper /#content-wrap / #content
+4. #main-wrapper / main-wrap / #main
+5. #sidebar-wrapper / #sidebar-wrap /#sidebar, 
+ada juga #lsidebar (l=left) / #rsidebar (r=right)
+*/
+/* Mengetahui ukuran Header. */
+#header-wrapper {
+  height: 119px;
+  width: 900px;
+}
+
+/* Mengetahui ukuran main kolom. */
+#main-wrapper {
+  float: left;
+  margin-right: 10px;
+  overflow: hidden;
+  width: 507px;
+  word-wrap: break-word;
+}
+
+/* Mengetahui ukuran Sidebar. */
+#sidebar-wrapper {
+  float: right;
+  overflow: hidden;
+  padding-left: 8px;
+  margin-right: 13px;
+  width: 362px;
+  word-wrap: break-word;
+}
+
+/* Mengetahui ukuran lebar keseluruhan template. */
+#outer-wrapper {
+  margin: 20px auto;
+  padding: 0 10px;
+  text-align: justify;
+  width: 900px;
+}
+
+/* class="wrapper" => menggunakan . */
+/* id="wrapper" => menggunakan # */
+.wrapper {
+  background: red;
+  color: white;
+  height: 600px;
+  width: 800px;
+}
+
+.wrapper p {
+  background: blue;
+  color: white;
+  float: left;
+  /* float: right; */
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+/* ke alur normal */
+.wrapper h1 {
+  clear: both;
+}
+
+/* width dan height pada seluruh elemen,  */
+/* float pada sidebar dan content, serta  */
+/* clear pada footer */
+
+/* Elemen Header */
+/* Elemen Navigation */
+/* Elemen Sidebar */
+/* Elemen Konten */
+/* Elemen Footer */
+
+
+/* content */
+body {
+  width: 960px;
+}
+
+header,
+nav,
+aside,
+section,
+footer {
+  background: #14BCE6;
+  border: 1px solid white;
+  color: white;
+  font-size: 2em;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+header,
+nav,
+footer {
+  width: 100%;
+}
+
+header,
+footer {
+  height: 100px;
+}
+
+nav {
+  height: 50px;
+}
+
+aside {
+  float: left;
+  height: 250px;
+  width: 29.5%;
+}
+
+section#content {
+  float: right;
+  height: 250px;
+  width: 70%;
+}
+
+footer {
+  clear: both;
+}
+
+/* endcontent */
+
+/* penanganan masalah float pada container = clear fix */
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}

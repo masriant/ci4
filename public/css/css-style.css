@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'Windings';
+  src: url('windings.eot');
+  src: url('windings.eot') format('embedded-opentype'),
+    url('windings.woff') format('woff'),
+    url('windings.ttf') format('truetype'),
+    url('windings.svg') format('svg');
+}
+
+body {
+  font-family: 'Windings', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 960px;
+}
+
+header,
+nav,
+aside,
+section,
+footer {
+  background: #14BCE6;
+  border: 1px solid white;
+  color: white;
+  font-size: 2em;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+header,
+nav,
+footer {
+  width: 100%;
+}
+
+header,
+footer {
+  height: 100px;
+}
+
+nav {
+  height: 50px;
+}
+
+aside {
+  float: left;
+  height: 250px;
+  width: 29.5%;
+}
+
+section#content {
+  float: right;
+  height: 250px;
+  width: 70%;
+}
+
+footer {
+  clear: both;
+}
+
+/*-------------------------------------------------------*/
+/* Floating Element */
+.wrapper {
+  background: red;
+  color: white;
+  height: 600px;
+  width: 800px;
+}
+
+.wrapper p {
+  background: blue;
+  color: white;
+  float: left;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+/*-------------------------------------------------------*/
+
+/* float */
+.wrapper h1 {
+  clear: both;
+}
+
+/* container float */
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+
+.container:after {
+  clear: both;
+}
+
+/*-------------------------------------------------------*/
+/* border */
+div {
+  border-radius: 10px;
+}
+
+div {
+  border-color: red;
+}
+
+div {
+  border-style: dotted;
+}
+
+div {
+  border-width: 10px;
+}
+
+/*-------------------------------------------------------*/
+/* 
+pengukuran total dari panjang elemen adalah:
+margin-right + border-right + padding-right + width + padding-left +
+border-left + margin-left */
+/*-------------------------------------------------------*/
+
+/* 
+tinggi total dari sebuah elemen adalah:
+margin-top + border-top + padding-top + height + padding-bottom +
+border-bottom + margin-bottom */
+/*-------------------------------------------------------*/
+
+/* margin = jarak antar elemen */
+p {
+  /*
+      margin-top: 10px
+      margin-right: 20px;
+      margin-bottom: 30px
+      margin-left: 40px;
+  */
+  margin: 10px 20px 30px 40px;
+}
+
+/* padding = jarak di dalam elemen sendiri,
+yaitu jarak dari konten elemen ke pembatas
+(border) elemen
+*/
+div {
+  margin: 10px;
+  padding: 15px;
+}

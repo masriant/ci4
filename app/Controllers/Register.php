@@ -9,6 +9,7 @@ use Config\Services;
 class Register extends BaseController
 {
 
+
   public function index()
   {
     helper('Akses');

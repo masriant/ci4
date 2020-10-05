@@ -49,3 +49,7 @@ Database (DBMS - phpMyAdmin)
 
 1.b. Hapus tabel Database
 - klik operasi/operations > Hapus tabel(DROP)
+
+https://drive.google.com/uc?id=1EMz3w4OjT28qG4Oz4fkPDkm3LGVuqfX3&export=download 
+
+https://drive.google.com/uc?id=1sqNgs7y6-shnoTdMBQx0ohXpWMcMFptW&export=download
