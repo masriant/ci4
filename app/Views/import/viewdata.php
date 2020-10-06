@@ -10,6 +10,7 @@
         <th>ID</th>
         <th>Nama</th>
         <th>Tempat</th>
+        <th>Tanggal Lahir</th>
         <th>Jenis Kelamin</th>
         <th>Level</th>
         <th>Foto</th>

@@ -55,7 +55,7 @@ class Import extends BaseController
           'rules'     => 'uploaded[fileimport]|ext_in[fileimport,xls,xlsx]',
           'errors'    => [
             'uploaded'  => '{field} wajib diisi.',
-            'ext_in'    => '{field} harus extensi xls & xlsx'
+            'ext_in'    => '{field} harus extensi : xls & xlsx'
           ]
         ]
       ]
@@ -80,12 +80,18 @@ class Import extends BaseController
       $pesan_error = [];
       $jumlaherror = 0;
       $jumlahsukses = 0;
+
       foreach ($data as $x => $row) {
         if ($x == 0) {
           continue;
         }
         $noreg = $row[1];
         $nama = $row[2];
+        $tmplahir = $row[3];
+        $tgllahir = $row[4];
+        $jenkel = $row[5];
+        $reglevelid = $row[6];
+        $foto = $row[7];
 
         $db = \Config\Database::connect();
 
@@ -97,21 +103,30 @@ class Import extends BaseController
         } else {
           $datasimpan = [
             'noreg' => $noreg,
-            'nama'  => $nama
+            'nama' => $nama,
+            'tmplahir' => $tmplahir,
+            'tgllahir' => $tgllahir,
+            'jenkel' => $jenkel,
+            // 'reglevelid' => $reglevelid,
+            'reglevelid' => 1,
+            'foto' => $foto
           ];
-
+          // dd($datasimpan);
           $db->table('register')->insert($datasimpan);
           $jumlahsukses++;
         }
       }
+      $this->session->setFlashdata('sukses', "$jumlaherror Data gagal disimpan. <br> $jumlahsukses Data berhasil disimpan.");
+      // session()->setFlashdata('sukses', 'Data berhasil ditambahkan.');
+
       // foreach ($pesan_error as $error) {
       //   echo $error;
-      $this->session->setFlashdata('sukses', "$jumlaherror Data tidak bisa disimpan. <br> $jumlahsukses Data bisa disimpan.");
-      // session()->setFlashdata('sukses', 'Data berhasil ditambahkan.');
+      // }
+
+
       return redirect()->to('/import/index');
     }
   }
-
   public function print()
   {
     // $data['register'] = $this->ModelRegister->tampil_data("register")->result();
@@ -208,7 +223,7 @@ class Import extends BaseController
 
       $baris++;
     }
-    $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx();
+    // $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx();
     $filename = "Data Pendaftaran" . '.xlsx';
     $object->getActiveSheet()->setTitle("Data Peserta Online");
 
