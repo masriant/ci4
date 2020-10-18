@@ -8,6 +8,24 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
   <!-- My CSS -->
   <link rel="stylesheet" href="/css/main.css">
   <title><?= $title; ?> | Masrianto</title>
@@ -17,12 +35,18 @@
   <?= $this->include('layout/navbar'); ?>
   <!-- container -->
   <div class="container">
-    <?= $this->renderSection('content'); ?>
+    <div class="blog-post">
+      <?= $this->renderSection('content'); ?>
+    </div>
     <div class="clearfix"></div>
   </div>
-  <footer class="container fixed-bottom bg-light text-center">
+  <!-- <footer class="container fixed-bottom bg-light text-center"> -->
+  <footer class="blog-footer">
     <p class="my-2"> <strong> LAKIP INSTITUTE by<a href="https://www.lakip.co.id">
           Masrianto</a></strong> All rights reserved.<br> &copy; 2018 - <?= date('Y') ?></p>
+    <p>
+      <a href="#">Back to top</a>
+    </p>
   </footer>
   <!-- end container -->
   <!-- Optional JavaScript; choose one of the two! -->
