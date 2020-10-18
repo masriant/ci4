@@ -2,26 +2,26 @@
 
 namespace App\Controllers;
 
-use App\Models\LakipModel;
+use App\Models\KomikModel;
 
 class Home extends BaseController
 {
-	protected $lakipModel;
+	protected $komikModel;
 	public function __construct()
 	{
-		$this->lakipModel = new LakipModel();
+		$this->komikModel = new KomikModel();
 	}
 	public function index()
 	{
-		// $data = [
-		// 	'title' => 'Home',
-		// 	'lakip' => $this->lakipModel->getLakip(),
-		// 	// 'lakip' => $this->lakipModel->getLakip($slug)
+		$data = [
+			'title' => 'Home',
+			'komik' => $this->komikModel->getKomik(),
+			// 'komik' => $this->komikModel->getKomik($slug)
 
-		// ];
-		// return view('home/index', $data);
+		];
+		return view('home/index', $data);
 
-		return view('welcome_message');
+		// return view('welcome_message');
 		// echo 'Hello Pages';
 		// return view('pages/home');
 
@@ -33,7 +33,7 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'Blog',
-			'lakip' => $this->lakipModel->getLakip()
+			'komik' => $this->komikModel->getKomik()
 		];
 
 		return view('home/blog', $data);
@@ -44,8 +44,8 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'Event',
-			// 'lakip' => $this->lakipModel->getLakip(), // ini untuk findAll
-			'lakip' => $this->lakipModel->getLakip($slug) // ini untuk $slug
+			// 'komik' => $this->komikModel->getKomik(), // ini untuk findAll
+			'komik' => $this->komikModel->getKomik($slug) // ini untuk $slug
 
 		];
 
@@ -57,7 +57,7 @@ class Home extends BaseController
 	{
 		$data = [
 			'title' => 'Profile',
-			'lakip' => $this->lakipModel->getLakip(), // ini untuk findAll
+			'komik' => $this->komikModel->getKomik(), // ini untuk findAll
 
 		];
 

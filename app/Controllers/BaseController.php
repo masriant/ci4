@@ -27,7 +27,7 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = [];
+	protected $helpers = ['url', 'helper'];
 
 	/**
 	 * Constructor.
@@ -46,5 +46,6 @@ class BaseController extends Controller
 		$this->nama = 'Masrianto';
 		// Jika memutuskan menggunakan si semua controller, gunakan di bawah ini
 		// $this->komikModel = new \App\Models\KomikModel();
+		$this->lakipModel = new \App\Models\LakipModel();
 	}
 }

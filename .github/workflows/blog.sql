@@ -40,6 +40,46 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `lakip`;
+CREATE TABLE IF NOT EXISTS `lakip` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `judul` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `penulis` varchar(255) NOT NULL,
+  `penerbit` varchar(255) NOT NULL,
+  `sampul` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `lakip`;
+CREATE TABLE IF NOT EXISTS `lakip` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `judul` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `penulis` varchar(255) NOT NULL,
+  `penerbit` varchar(255) NOT NULL,
+  `sampul` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `lakip`;
+
+CREATE TABLE IF NOT EXISTS `lakip` ( `id` int(11) NOT NULL AUTO_INCREMENT, `judul` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `description` text DEFAULT NULL, `penulis` varchar(255) NOT NULL, `penerbit` varchar(255) NOT NULL, `sampul` varchar(255) NOT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `deleted_at` datetime DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `lakip`;
+
+CREATE TABLE IF NOT EXISTS `lakip` ( `id` int(11) NOT NULL AUTO_INCREMENT, `judul` varchar(255) NOT NULL, `slug` varchar(255) NOT NULL, `description` text DEFAULT NULL, `penulis` varchar(255) NOT NULL, `penerbit` varchar(255) NOT NULL, `sampul` varchar(255) NOT NULL, `created_at` datetime DEFAULT NULL, `updated_at` datetime DEFAULT NULL, `deleted_at` datetime DEFAULT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

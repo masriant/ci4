@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\LakipModel;
 
-class Dashboard extends BaseController
+class Category extends BaseController
 {
   protected $lakipModel;
   public function __construct()
@@ -14,11 +14,10 @@ class Dashboard extends BaseController
   public function index()
   {
     $data = [
-      'title' => 'Dashboard',
+      'title' => 'Category',
       'lakip' => $this->lakipModel->getLakip()
     ];
-    return view('dashboard/index', $data);
-    // echo 'Hello Dashboard';
+    return view('category/index', $data);
   }
 
   //--------------------------------------------------------------------
@@ -33,7 +32,7 @@ class Dashboard extends BaseController
     if (empty($data['lakip'])) {
       throw new \CodeIgniter\Exceptions\PageNotFoundException('Data yang dicari adalah " ' . $slug . ' " tidak ditemukan dalam database kami.');
     }
-    return view('dashboard/detail', $data);
+    return view('category/detail', $data);
   }
 
   //--------------------------------------------------------------------
@@ -46,7 +45,7 @@ class Dashboard extends BaseController
       'validation' => \Config\Services::validation()
     ];
 
-    return view('dashboard/create', $data);
+    return view('category/create', $data);
   }
 
   //--------------------------------------------------------------------
@@ -98,7 +97,7 @@ class Dashboard extends BaseController
 
     ])) {
 
-      return redirect()->to('/dashboard/create')->withInput();
+      return redirect()->to('/category/create')->withInput();
     }
 
     // ambil gambar
@@ -126,7 +125,7 @@ class Dashboard extends BaseController
 
     session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
 
-    return redirect()->to('/dashboard');
+    return redirect()->to('/category');
   }
 
   //--------------------------------------------------------------------
@@ -143,7 +142,7 @@ class Dashboard extends BaseController
 
     $this->lakipModel->delete($id);
     session()->setFlashdata('pesan', 'Data berhasil dihapus.');
-    return redirect()->to('/dashboard');
+    return redirect()->to('/category');
   }
 
   //--------------------------------------------------------------------
@@ -155,7 +154,7 @@ class Dashboard extends BaseController
       'lakip' => $this->lakipModel->getLakip($slug)
     ];
 
-    return view('dashboard/edit', $data);
+    return view('category/edit', $data);
   }
 
   //--------------------------------------------------------------------
@@ -211,7 +210,7 @@ class Dashboard extends BaseController
 
     ])) {
 
-      return redirect()->to('/dashboard/edit/' . $this->request->getVar('slug'))->withInput();
+      return redirect()->to('/category/edit/' . $this->request->getVar('slug'))->withInput();
     }
 
     $fileSampul = $this->request->getFile('sampul');
@@ -241,7 +240,7 @@ class Dashboard extends BaseController
 
     session()->setFlashdata('pesan', 'Data berhasil diubah.');
 
-    return redirect()->to('/dashboard');
+    return redirect()->to('/category');
   }
 
   //--------------------------------------------------------------------
